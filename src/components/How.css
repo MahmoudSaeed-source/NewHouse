@@ -1,0 +1,10 @@
+.How-image{
+      background-image: url('../assets//images/who/1.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+@media (max-width:992px) {
+      .How-image{
+      background-position: center center;
+      }
+}
