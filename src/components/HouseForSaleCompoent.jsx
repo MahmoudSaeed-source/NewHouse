@@ -29,7 +29,7 @@ const HouseForSaleCompoent = ( ) => {
                         {!Houses.isLoding && Houses.housesForSale.length && (
                               <ul className='card-container dark:bg-black relative  '>
                                     {
-                                          Houses.housesForSale.slice(0,6).map(house => (
+                                          Houses.housesForSale.slice(133,139).map(house => (
                                                 
                                                 house.photo &&       
                                                       <li className='Card-content font-body lg:w-1/2 w-full lg:text-xl text-sm' key={house.property_id}><Card house={house} /></li>     
