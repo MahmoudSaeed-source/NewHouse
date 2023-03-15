@@ -8,7 +8,7 @@ function App() {
  
 
   return (
-    <div className="App h-{100%} w-screen m-0 dark:bg-black flex justify-center items-start flex-col" >
+    <div className="App h-{100%} w-screen m-0  bg-gray-200 dark:bg-black flex justify-center items-start flex-col" >
       <NAV_BAR />
       
         <HeroSection />

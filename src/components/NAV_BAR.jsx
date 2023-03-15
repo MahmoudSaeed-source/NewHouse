@@ -37,7 +37,7 @@ const NAV_BAR = () => {
           <span className= 'font-title  ml-2  text-amber-500 text-xl'>New House</span>   
         </div>
       </div>
-      <ul ref={navRef} className=' font-Links tracking-widest font-medium uppercase hidden lg:flex  lg:text-xl text-xl justify-center items-center dark: text-amber-500 ' >
+      <ul ref={navRef} className=' font-Links tracking-widest  uppercase hidden lg:flex  lg:text-sm text-md justify-center items-center dark: text-amber-500 ' >
         <li className=''><Link to='/'>Home</Link></li>
         <li><Link to='/'>For_Rent</Link></li>
         <li><Link to='/HousesForSale'>For_Sale</Link></li>

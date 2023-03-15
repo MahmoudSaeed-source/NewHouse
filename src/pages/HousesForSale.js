@@ -40,7 +40,7 @@ const HousesForSale = () => {
     } )
     return (
       
-        <div className=' w-s h-auto flex justify-center items-center  flex-col dark:bg-black'>
+        <div className=' w-s h-auto flex justify-center items-center  flex-col  bg-gray-200 dark:bg-black'>
             <NAV_BAR />              
             <div className='HeroSectionWithSearch w-full h-[100vh] bg-white flex justify-center items-center px-14 bg-hero-pattern bg-no-repeat bg-cover bg-fixed'>
                 <div className='serchSectin w-full lg:h-60 h-auto bg-white flex justify-center items-center px-4 relative opacity-70 py-6'>
