@@ -1,5 +1,6 @@
 import React,{ useEffect ,useState} from 'react'
 import Card from '../components/Card'
+import { BsHouseHeartFill } from 'react-icons/bs'
 import ReactLoading from 'react-loading';
 import { fetchHousesForSale } from '../app/features/forSale/forSale'
 import { useDispatch,useSelector } from 'react-redux'
@@ -106,7 +107,9 @@ const HousesForSale = () => {
                     </div>
                 </div>
             </div>
-            
+            <div className="h-100 w-full flex justify-start items-center mt-8 ">
+                <h2 className='w-full h-full px-12  text-amber-500  uppercase text-body flex  items-center  font-bold text-2xl'>  <BsHouseHeartFill size={40} className='mr-2' />houses for sale</h2>
+            </div>
                 {
                     Houses.isLoding && <ReactLoading type="spin" color="#e08c04" height={40} width={20} />
                 }

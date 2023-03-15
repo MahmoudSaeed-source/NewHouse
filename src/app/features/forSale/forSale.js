@@ -25,9 +25,7 @@ const initialState = {
 export const fetchHousesForSale = createAsyncThunk('forSale/fetchHousesForSale',async () => {
     try {
         const response = await axios.request(headers);
-        console.log(response.data.listings);
-        return response.data.listings;
-        
+           return response.data.listings;
     } catch(error) {
         console.error(error);
         
