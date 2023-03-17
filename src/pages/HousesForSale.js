@@ -5,6 +5,7 @@ import ReactLoading from 'react-loading';
 import { fetchHousesForSale } from '../app/features/forSale/forSale'
 import { useDispatch,useSelector } from 'react-redux'
 import NAV_BAR from '../components/NAV_BAR';
+import Footer from '../components/Footer'
 const HousesForSale = () => {
     
     const dispatch = useDispatch()
@@ -126,8 +127,8 @@ const HousesForSale = () => {
                 {!Houses.isLoding && filterHouses.length === 0 && (
           <p className="text-center text-xl mt-4">No matching houses found.</p>
         )}
-             
             </div>
+            <Footer/>
     </div>
   )
 }

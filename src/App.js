@@ -1,9 +1,9 @@
 import './App.css';
-
 import NAV_BAR from './components/NAV_BAR';
 import HeroSection from './components/HeroSection';
 import WHO_WE_ARE from './components/WHO_WE_ARE'
 import HouseForSaleCompoent from './components/HouseForSaleCompoent';
+import Footer from './components/Footer'
 function App() {
  
 
@@ -14,7 +14,7 @@ function App() {
         <HeroSection />
         <WHO_WE_ARE />
         <HouseForSaleCompoent />
-  
+      <Footer/>
   
       </div>
     
