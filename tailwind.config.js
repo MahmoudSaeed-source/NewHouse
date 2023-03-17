@@ -10,6 +10,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-pattern': "url('../src/assets/images/hero/image1.jpg')",
+        'Footer-pattern':"url('/src/assets/images/footer/photo-1477959858617-67f85cf4f1df.jfif')",
+        'Footer-1':"url('/src/assets/images/footer/47289d02a876ac9323a7ca1e04405127l-m89429784x.jpg')",
+        'Footer-2':"url('/src/assets/images/footer/photo-1477959858617-67f85cf4f1df.jfif')",
         
       },
       height: {

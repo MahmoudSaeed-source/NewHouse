@@ -114,7 +114,7 @@ const HousesForSale = () => {
                 {
                     Houses.isLoding && <ReactLoading type="spin" color="#e08c04" height={40} width={20} />
                 }
-            <div className='w-full h-auto m-5 p-0 flex justify-center items-center'>
+            <div className='w-full h-[800px] overflow-auto m-5 p-0 flex justify-center items-center'>
                 {!Houses.isLoding && filterHouses.length > 0  && (                 
                     <ul className='card-container dark:bg-black m-0 '>
                         {
