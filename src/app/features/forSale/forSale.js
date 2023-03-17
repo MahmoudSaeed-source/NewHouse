@@ -11,7 +11,7 @@ const headers = {
         sort: 'relevance'
     },
     headers: {
-        'X-RapidAPI-Key': 'ad1d10c3f5msh41840c5709f1194p1f12ebjsn0118d33dde71',
+        'X-RapidAPI-Key': '32f0a19324msh37e6eae0698204cp18e31ejsnc222b39648da',
         'X-RapidAPI-Host': 'realty-in-us.p.rapidapi.com'
     }
 };

@@ -30,7 +30,7 @@ align-items: center;
 justify-content: center;
 transition: all .3s ease-in-out;
 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-z-index: 10000;
+z-index: 1000000;
 padding: 0;
 margin: 0;
 }
@@ -49,7 +49,7 @@ align-items: center;
 justify-content: center;
 transition: all .3s ease-in-out;
 box-shadow: rgba(71, 69, 69, 0.35) 0px 5px 15px;
-z-index: 100000;
+z-index: 10000000;
 padding: 0;
 margin: 0;
 }

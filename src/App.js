@@ -3,6 +3,7 @@ import NAV_BAR from './components/NAV_BAR';
 import HeroSection from './components/HeroSection';
 import WHO_WE_ARE from './components/WHO_WE_ARE'
 import HouseForSaleComponent from './components/HouseForSaleComponent';
+import HouseForRentComponent from './components/HouseForRentComponent';
 import Footer from './components/Footer'
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <HeroSection />
         <WHO_WE_ARE />
         <HouseForSaleComponent />
+      <HouseForRentComponent />
       <Footer/>
       </div>
   );

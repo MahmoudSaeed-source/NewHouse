@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './app/store/store';
 import ErrorPage from './pages/ErrorPage'
 import HousesForSale from './pages/HousesForSale'
+import HousesForRent from './pages/HousesForRent'
 import HouseDatailes from './pages/HouseDatailes'
 
 import './index.css';
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: '/HousesForSale',
     element: <HousesForSale />
+  },
+  {
+    path: '/HousesForRent',
+    element: <HousesForRent />
   },
   {
     path: "HousesForSale/:HouseId",

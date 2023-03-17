@@ -17,9 +17,9 @@ const Card = ({ house }) => {
                     </div>
                     <img className='w-full h-full  rounded-lg  bg-center'src={house.photo} alt='images'/>
               </div>
-              <h2 className=' w-full h-8 flex justify-start p-2 items-center  rounded-sm lg:text-[16px] text-[10px] font-body capitalize'>{house.prop_type}</h2>
-              <div className='text-[8px] flex justify-start items-center w-full h-4 over-hidden'><FaMapMarkerAlt size={15} color="red" /> {house.address}</div>
-              <div className='flex justify-around items-center w-full h-10 lg:text-[12px] text-[10px] '>
+              <h2 className=' w-full h-8 flex justify-start p-2 mb-4 items-center  rounded-sm lg:text-[16px] text-[10px] font-body capitalize'>{house.prop_type}</h2>
+              <div className='w-full h-12 text-[8px] flex overflow-hidden justify-start items-center   '><FaMapMarkerAlt size={15} color="red" /> {house.address}</div>
+              <div className='flex justify-around items-center w-full h-10 lg:text-[10px] text-[10px] '>
                     <span >city : {house.address_new.city} </span>
                     <span > state : {house.address_new.state} </span>
                     <span > price : {house.short_price}</span>

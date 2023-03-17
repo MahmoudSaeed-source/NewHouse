@@ -15,8 +15,10 @@ const NAV_BAR = () => {
   const responsive_Nav = () => {
     if(CurrentMode) {
       navRef.current.classList.toggle('menu-open-dark') 
+      console.log('yes')
     }else{
       navRef.current.classList.toggle('menu-open') 
+      console.log('no')
     }
   }
  
@@ -37,9 +39,9 @@ const NAV_BAR = () => {
           <span className= 'font-title  ml-2  text-amber-500 text-xl'>New House</span>   
         </div>
       </div>
-      <ul ref={navRef} className=' font-Links tracking-widest  uppercase hidden lg:flex  lg:text-sm text-md justify-center items-center dark: text-amber-500 ' >
+      <ul ref={navRef} className=' font-Links tracking-widest  uppercase hidden lg:flex  lg:text-sm text-md justify-center items-center dark:text-amber-500 ' >
         <li className=''><Link to='/'>Home</Link></li>
-        <li><Link to='/'>For_Rent</Link></li>
+        <li><Link to='/HousesForRent'>For_Rent</Link></li>
         <li><Link to='/HousesForSale'>For_Sale</Link></li>
         <li><Link to='/'>About</Link></li>
         <li><Link to='/'>Contact us</Link></li>
@@ -50,8 +52,9 @@ const NAV_BAR = () => {
         }
       </div>
       <div className='toggle h-full w-14  justify-center items-center flex lg:hidden'>
-        <button onClick= { responsive_Nav}
-        > <AiOutlineMenuFold size={40} className=' Btn ml-3 dark: text-amber-500' /></button>
+        <button onClick={responsive_Nav}>
+          <AiOutlineMenuFold size={40} className=' Btn ml-3 dark: text-amber-500' />
+        </button>
           </div>
         </div>
   )
