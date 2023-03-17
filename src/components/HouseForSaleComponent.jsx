@@ -6,7 +6,7 @@ import { fetchHousesForSale } from '../app/features/forSale/forSale'
 import { useDispatch,useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import {AiOutlineArrowRight} from 'react-icons/ai'
-const HouseForSaleCompoent = ( ) => {
+const HouseForSaleComponent = ( ) => {
       
       const dispatch = useDispatch()
       const Houses = useSelector((state) => state.forSale)
@@ -44,4 +44,4 @@ const HouseForSaleCompoent = ( ) => {
       )
 }
 
-export default HouseForSaleCompoent
+export default HouseForSaleComponent
