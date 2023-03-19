@@ -1,4 +1,4 @@
-li{  
+.link{  
     display: flex;
     cursor: pointer;
     text-transform: uppercase;
@@ -9,7 +9,7 @@ li:hover{
     color: #e08c04
 }
 
-ul{
+.links{
     height: 100%;
     width: 65%;
     padding: 0px .5rem;

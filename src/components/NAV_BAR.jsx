@@ -39,12 +39,12 @@ const NAV_BAR = () => {
           <span className= 'font-title  ml-2  text-amber-500 text-xl'>New House</span>   
         </div>
       </div>
-      <ul ref={navRef} className=' font-Links tracking-widest  uppercase hidden lg:flex  lg:text-sm text-md justify-center items-center dark:text-amber-500 ' >
-        <li className=''><Link to='/'>Home</Link></li>
-        <li><Link to='/HousesForRent'>For_Rent</Link></li>
-        <li><Link to='/HousesForSale'>For_Sale</Link></li>
-        <li><Link to='/'>About</Link></li>
-        <li><Link to='/'>Contact us</Link></li>
+      <ul ref={navRef} className='links font-Links tracking-widest  uppercase hidden lg:flex  lg:text-sm text-md justify-center items-center dark:text-amber-500 ' >
+        <li className='link'><Link to='/'>Home</Link></li>
+        <li className='link'><Link to='/HousesForRent'>For_Rent</Link></li>
+        <li className='link'><Link to='/HousesForSale'>For_Sale</Link></li>
+        <li className='link'><Link to='/'>About</Link></li>
+        <li className='link'><Link to='/'>Contact us</Link></li>
           </ul>
       <div className='setting h-full  flex items-center justify-center w-12 '>
         {

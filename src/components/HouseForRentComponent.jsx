@@ -18,7 +18,7 @@ const HouseForRentComponent = ( ) => {
 
             <div className=' w-full h-auto flex justify-start items-start lg:mt-4 mt-12 flex-col dark:bg-black lg:mx-12 '>
               
-                  <h2 className='text-amber-500 text-2xl w-full h-14 flex items-start font-body capitalize underline' >
+                  <h2 className='text-amber-500 lg:text-2xl text-[22px] w-full h-14 flex items-start font-body capitalize underline' >
                         Our Featured Exclusive For Rent
                         {
                               Houses.loading && <ReactLoading type="spin" color="#e08c04" height={20} width={20} />
@@ -37,7 +37,7 @@ const HouseForRentComponent = ( ) => {
                                     }
                               </ul>
                         )}
-                        <h2 className=' text-amber-500 w-full h-11 flex justify-end items-start  font-body text-lg font-bold px-12'><Link to='/HousesForRent'>Show more</Link>
+                        <h2 className=' text-amber-500 w-full h-11 flex justify-end items-start  font-body text-lg font-bold lg:px-12 px-2'><Link to='/HousesForRent'>Show more</Link>
                               <AiOutlineArrowRight size={2} className='flex justify-start items-center h-8 w-6 text-sm mx-1' /></h2>
                   </div>
             </div>
