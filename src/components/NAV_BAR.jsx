@@ -36,10 +36,10 @@ const NAV_BAR = () => {
       <div className='logo_content  w-full lg:w-48 overflow-hidden items-center justify-center m-0  '>
         <div className='flex items-center  justify-start overflow-hidden '>
           {CurrentMode ? <img className='w-16 h-16 flex items-center justify-center rounded-full' src={lightLogo} alt='darkLogo' /> : <img className='w-16 h-16 rounded-full flex items-center justify-center' src={darkLogo} alt='lightLogo' />}
-          <span className= 'font-title  ml-2  text-amber-500 text-xl'>New House</span>   
+          <span className= 'font-title  ml-2  text-blue text-xl'>New House</span>   
         </div>
       </div>
-      <ul ref={navRef} className='links font-Links tracking-widest  uppercase hidden lg:flex  lg:text-sm text-md justify-center items-center dark:text-amber-500 ' >
+      <ul ref={navRef} className='links font-Links tracking-widest  uppercase hidden lg:flex  lg:text-sm text-md justify-center items-center text-blue ' >
         <li className='link'><Link to='/'>Home</Link></li>
         <li className='link'><Link to='/HousesForRent'>For_Rent</Link></li>
         <li className='link'><Link to='/HousesForSale'>For_Sale</Link></li>
@@ -48,7 +48,7 @@ const NAV_BAR = () => {
           </ul>
       <div className='setting h-full  flex items-center justify-center w-12 '>
         {
-          CurrentMode ? <button onClick={hendleMode}><CiLight size={30} className=' text-amber-500' /></button> : <button onClick={hendleMode}><MdDarkMode size={30} className=' text-black' /></button>
+          CurrentMode ? <button onClick={hendleMode}><CiLight size={30} className=' text-blue' /></button> : <button onClick={hendleMode}><MdDarkMode size={30} className=' text-black' /></button>
         }
       </div>
       <div className='toggle h-full w-14  justify-center items-center flex lg:hidden'>
