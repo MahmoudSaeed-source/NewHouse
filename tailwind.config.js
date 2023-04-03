@@ -25,6 +25,7 @@ module.exports = {
       },
       colors: {
         'hoverTextColor': '#e08c04',
+        'blue':'#38bdf8'
       },
       screens: {
         'sm': '640px',
