@@ -31,7 +31,7 @@ const NAV_BAR = () => {
     dispatch(toggleMode())
   }
   return (
-    <div className=' nav-content items-center flex  justify-center w-full h-20 px-2 md:px-12 sm:px-0 m-0 shadow-lg overflow-hidden  dark:shadow-white dark:shadow-sm  dark:bg-black relative' >
+    <div className=' nav-content items-center flex  justify-center w-full h-20 px-2 md:px-12 sm:px-0 m-0 shadow-lg overflow-hidden  dark:shadow-white dark:shadow-sm  relative' >
      
       <div className='logo_content  w-full lg:w-48 overflow-hidden items-center justify-center m-0  '>
         <div className='flex items-center  justify-start overflow-hidden '>

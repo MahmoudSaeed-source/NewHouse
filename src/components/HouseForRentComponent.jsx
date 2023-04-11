@@ -1,47 +1,53 @@
-import './houseForSale.css'
-import React,{ useEffect } from 'react'
-import Card from './Card'
-import ReactLoading from 'react-loading';
-import { fetchHousesForRent } from '../app/features/forRent/ForRentSlice'
-import { useDispatch,useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
-import {AiOutlineArrowRight} from 'react-icons/ai'
-const HouseForRentComponent = ( ) => {
-      
-      const dispatch = useDispatch()
-      const Houses = useSelector((state) => state.forRent)
-      useEffect(() => {
-            dispatch(fetchHousesForRent())
-      },[])
+import "./houseForSale.css";
+import React, { useEffect } from "react";
+import ReactLoading from "react-loading";
+import { fetchHousesForRent } from "../app/features/forRent/ForRentSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import HomeCard from "./HomeCard";
+const HouseForRentComponent = () => {
+  const dispatch = useDispatch();
+  const Houses = useSelector((state) => state.forRent);
+  useEffect(() => {
+    dispatch(fetchHousesForRent());
+  }, []);
 
-      return (
+  return (
+    <div className=" w-full h-auto flex justify-start items-start lg:mt-4 mt-12 flex-col  lg:mx-12 ">
+      <div className="w-full h-14 flex justify-between items-center">
+        <h2 className="text-blue lg:text-[16px] text-[22px] w-full h-14 flex items-start font-body capitalize underline">
+          Our Featured Exclusive For Rent
+        </h2>
+        <h2 className=" text-blue w-full h-11 flex justify-end items-start  font-body text-[14px] font-bold lg:px-12 px-2">
+          <Link to="/HousesForRent">All Properties</Link>
+          <MdOutlineKeyboardDoubleArrowRight size={25} className="text-blue mr-2"/>
+        </h2>
+      </div>
 
-            <div className=' w-full h-auto flex justify-start items-start lg:mt-4 mt-12 flex-col dark:bg-black lg:mx-12 '>
-              
-                  <h2 className='text-amber-500 lg:text-2xl text-[22px] w-full h-14 flex items-start font-body capitalize underline' >
-                        Our Featured Exclusive For Rent
-                        {
-                              Houses.loading && <ReactLoading type="spin" color="#e08c04" height={20} width={20} />
-                        }
+      <hr></hr>
+      <div className="w-full flex justify-start items-start  m-0 p-0 flex-col">
+        {Houses.loading && (
+          <ReactLoading type="spin" color="blue" height={20} width={20} />
+        )}
+        {!Houses.loading && Houses.houseForRent.length && (
+          <ul className="card-container  relative  ">
+            {Houses.houseForRent.slice(0, 9).map(
+              (house) =>
+                house.photo && (
+                  <li
+                    className="Card-content font-body lg:w-1/2 w-full lg:text-xl text-sm"
+                    key={house.property_id}
+                  >
+                    <HomeCard house={house} />
+                  </li>
+                )
+            )}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
+};
 
-                  </h2>
-                  <div className='w-full flex justify-start items-start dark:bg-black m-0 p-0 flex-col'>
-                        {!Houses.loading && Houses.houseForRent.length && (
-                              <ul className='card-container dark:bg-black relative  '>
-                                    {
-                                          Houses.houseForRent.slice(0,6).map(house => (
-                                                
-                                                house.photo &&       
-                                                      <li className='Card-content font-body lg:w-1/2 w-full lg:text-xl text-sm' key={house.property_id}><Card house={house} /></li>     
-                                          ))
-                                    }
-                              </ul>
-                        )}
-                        <h2 className=' text-amber-500 w-full h-11 flex justify-end items-start  font-body text-lg font-bold lg:px-12 px-2'><Link to='/HousesForRent'>Show more</Link>
-                              <AiOutlineArrowRight size={2} className='flex justify-start items-center h-8 w-6 text-sm mx-1' /></h2>
-                  </div>
-            </div>
-      )
-}
-
-export default HouseForRentComponent
+export default HouseForRentComponent;

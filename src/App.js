@@ -6,15 +6,16 @@ import HouseForSaleComponent from './components/HouseForSaleComponent';
 import HouseForRentComponent from './components/HouseForRentComponent';
 import Footer from './components/Footer'
 import AgentList from './components/AgentList'
+import HomeCard from './components/HomeCard'
 function App() {
   return (
-    <div className="App h-{100%} w-screen m-0  bg-gray-200 dark:bg-black flex justify-center items-start flex-col" >
+    <div className="App h-{100%} w-screen m-0  bg-gray-200 dark:bg-gray-800 flex justify-center items-start flex-col" >
       <NAV_BAR />
         <HeroSection />
-     <OurServices/>
+      <OurServices />
         <HouseForSaleComponent />
       <HouseForRentComponent />
-      <AgentList/>
+      <AgentList />
       <Footer/>
       </div>
   );

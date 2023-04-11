@@ -16,10 +16,11 @@ const options = {
         types: 'agent'
     },
     headers: {
-        'X-RapidAPI-Key': '32f0a19324msh37e6eae0698204cp18e31ejsnc222b39648da',
+        'X-RapidAPI-Key': 'ad1d10c3f5msh41840c5709f1194p1f12ebjsn0118d33dde71',
         'X-RapidAPI-Host': 'realty-in-us.p.rapidapi.com'
     }
 };
+
 export const fetchAgentList = createAsyncThunk('Agent/fetchAgentList',async () => {
     try {
         const response = await axios.request(options);

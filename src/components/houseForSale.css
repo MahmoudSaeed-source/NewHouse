@@ -11,11 +11,11 @@
       margin: 0;
 }
 .Card-content{
-      width: 29%;
-      height: 385px;
+      width: auto;
+      height: auto;
       display: flex;
       margin-bottom: 20px;
-
+     
 }
 @media (max-width:992px) {
       .Card-content{
