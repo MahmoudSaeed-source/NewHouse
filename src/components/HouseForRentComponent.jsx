@@ -16,12 +16,15 @@ const HouseForRentComponent = () => {
   return (
     <div className=" w-full h-auto flex justify-start items-start lg:mt-4 mt-12 flex-col  lg:mx-12 ">
       <div className="w-full h-14 flex justify-between items-center">
-        <h2 className="text-blue lg:text-[16px] text-[22px] w-full h-14 flex items-start font-body capitalize underline">
+        <h2 className="text-blue lg:text-[16px] text-[16px] w-full h-14 flex items-start font-body capitalize underline">
           Our Featured Exclusive For Rent
         </h2>
         <h2 className=" text-blue w-full h-11 flex justify-end items-start  font-body text-[14px] font-bold lg:px-12 px-2">
           <Link to="/HousesForRent">All Properties</Link>
-          <MdOutlineKeyboardDoubleArrowRight size={25} className="text-blue mr-2"/>
+          <MdOutlineKeyboardDoubleArrowRight
+            size={25}
+            className="text-blue mr-2"
+          />
         </h2>
       </div>
 
@@ -31,7 +34,7 @@ const HouseForRentComponent = () => {
           <ReactLoading type="spin" color="blue" height={20} width={20} />
         )}
         {!Houses.loading && Houses.houseForRent.length && (
-          <ul className="card-container  relative  ">
+          <ul className="card-container relative md:flex-row flex-col lg:px-0 p-3  ">
             {Houses.houseForRent.slice(0, 9).map(
               (house) =>
                 house.photo && (

@@ -9,7 +9,7 @@ const OurServices = () => {
         <h2 className="w-full h-10 mb-2 lg:p-12 pl-2 lg:mt-0 mt-6 text-start text-2xl text-blue font-title">
           Our Services
         </h2>
-        <div className="w-full lg:h-48 h-auto md:flex-row flex-col flex lg:p-4 p-0 justify-around lg:items-start items-center  flex-wrap ">
+        <div className="w-full lg:h-48 h-auto lg:flex-row flex-col flex lg:p-4 p-0 justify-around lg:items-start items-center  flex-wrap ">
           <div className="lg:w-[300px] max-w-[350px] lg:mb-0 mb-4 h-36 mr-2 flex border-gray-300 border-2 shadow-lg bg-white">
             <div className="w-[15%] h-1/3 flex bg-blue justify-center items-center">
               <AiFillContainer size={40} className="text-white" />

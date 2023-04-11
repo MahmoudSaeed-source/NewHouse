@@ -2,7 +2,7 @@
 import React from 'react'
 const HomeCard = ({ house }) => {
   return (
-    <div className=" group homeCard w-[250px] h-[200px] bg-green-300  cursor-pointer overflow-hidden ">
+    <div className=" group homeCard md:w-[250px]  w-full h-[200px] bg-green-300  cursor-pointer overflow-hidden ">
       <div
         className="w-full h-full  "
         style={{
@@ -16,7 +16,7 @@ const HomeCard = ({ house }) => {
           className="w-full h-full  z-100 relative"
           style={{ backgroundColor: " #00000060" }}
         >
-          <div className="  w-full h-auto  flex flex-start absolute top-[56%] left-0  flex-col overflow-hidden ">
+          <div className="  w-full h-auto  flex flex-start absolute lg:top-[56%] top-[60%] left-0  flex-col overflow-hidden ">
             <h5 className=" h-[20px] w-[30%]  rounded-sm text-[12px] font-bolder pl-2 bg-blue text-white justify-center flex items-center  ">
               {house.price}
             </h5>
