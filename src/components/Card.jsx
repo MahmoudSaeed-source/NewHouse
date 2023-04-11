@@ -7,8 +7,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa'
 
 import {Link} from 'react-router-dom'
 const Card = ({ house }) => {
-
-     
+    
   return (
         <div className='w-full h-full bg-cyan-900 text-white flex items-center flex-col mb-2 rounded-xl shadow-sm  dark:shadow-white  shadow-black  hover:bg-gradient-to-r from-sky-500 to-indigo-500  hover:shadow-md relative' >
                           <div className=' group text-2xl w-full h-60 flex  items-center  rounded-sm relative'>
