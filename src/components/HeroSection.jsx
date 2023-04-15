@@ -37,7 +37,7 @@ const HeroSection = () => {
   return (
     <div className='HeroSectionWithSearch w-full h-[100vh] bg-white flex justify-center items-center px-14 bg-hero-pattern bg-no-repeat bg-cover bg-fixed'>
       <div className='serchSectin w-full lg:h-60 h-auto bg-white flex justify-center items-center px-4 relative opacity-70 py-6'>
-        <h2 className=' HeaderSerch lg:w-1/2 w-full h-12 flex justify-center items-center rounded-full bg-green-200 absolute lg:top-[-12%] top-[-8%] left-50 lg:text-lg text-[14px] text-bold '>THE BEST WAY TO FIND YOUR HOME</h2>
+        <h2 className=' HeaderSerch lg:w-1/2 w-full h-12 flex justify-center items-center rounded-full bg-blue absolute lg:top-[-12%] top-[-8%] left-50 lg:text-lg text-[14px] text-bold '>THE BEST WAY TO FIND YOUR HOME</h2>
         <div className='searchContent w-full h-full flex lg:flex-row flex-col gap-5 flex-wrap bg-white'>
           <from className='w-full h-full flex items-center justify-center p-4 flex-wrap bg-white' onSubmit={handleSubmitForm}>
             <select className='w-60 h-12  mr-2 font-body text-lg border-2 outline-1 outline-slate-300 bg-white lg:mb-0 mb-5 '
@@ -95,7 +95,7 @@ const HeroSection = () => {
               <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >5</option >
               <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >6</option >
             </select>
-            <button type='submit' onClick={handleSubmitForm} className=' submit   lg:w-1/3 w-1/2 h-12 flex justify-center items-center rounded-full bg-green-200 absolute lg:bottom-[-11%]  bottom-[-8%] left-50 lg:text-lg text-[14px] text-bold '>Search Property</button>
+            <button type='submit' onClick={handleSubmitForm} className=' submit   lg:w-1/3 w-1/2 h-12 flex justify-center items-center rounded-full bg-blue absolute lg:bottom-[-11%]  bottom-[-8%] left-50 lg:text-lg text-[14px] text-bold '>Search Property</button>
           </from>
         </div>
       </div>
