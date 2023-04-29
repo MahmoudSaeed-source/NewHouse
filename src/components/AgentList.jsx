@@ -14,14 +14,14 @@ const AgentList = () => {
   return (
     <div className="w-full h-auto bg-bull-300 lg:mr-12 mr-0 lg:ml-12 ml-0 ">
       <div className="w-full h-14 flex justify-between items-center">
-        <h2 className="text-blue text-lg w-full h-14 flex items-start font-body capitalize underline">
+        <h2 className="text-blue-title text-lg w-full h-14 flex items-start font-body capitalize underline">
           our Best Agent
         </h2>
-        <h2 className=" text-blue w-full h-11 flex justify-end items-start  font-body text-[14px] font-bold lg:px-12 px-2">
+        <h2 className=" text-blue-title w-full h-11 flex justify-end items-start  font-body text-[14px] font-bold lg:px-12 px-2">
           <Link to="/HousesForRent">All Properties</Link>
           <MdOutlineKeyboardDoubleArrowRight
             size={25}
-            className="text-blue mr-2"
+            className="text-blue-title mr-2"
           />
         </h2>
       </div>

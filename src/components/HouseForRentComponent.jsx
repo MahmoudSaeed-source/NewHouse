@@ -15,21 +15,19 @@ const HouseForRentComponent = () => {
 
   return (
     <div className=" w-full h-auto flex justify-start items-start lg:mt-4 mt-12 flex-col  lg:mx-12 ">
-      <div className="w-full h-14 flex justify-between items-center">
-        <h2 className="text-blue lg:text-[16px] text-[16px] w-full h-14 flex items-start font-body capitalize underline">
-          Our Featured Exclusive For Rent
+      <div className="w-full h-32 flex justify-center items-center flex-col">
+        <h2 className="text-blue-title   text-[20px] w-full h-14 flex items-center justify-center font-body capitalize ">
+          Properties for rent
         </h2>
-        <h2 className=" text-blue w-full h-11 flex justify-end items-start  font-body text-[14px] font-bold lg:px-12 px-2">
-          <Link to="/HousesForRent">All Properties</Link>
-          <MdOutlineKeyboardDoubleArrowRight
-            size={25}
-            className="text-blue mr-2"
-          />
-        </h2>
+        <h4 className="text-blue-300 text-[14px]   lg:w-[600px] w-full h-auto flex items-center justify-center font-body capitalize">
+          These are the latest properties in the Sales category. You can create
+          the list using the “latest listing shortcode” and show items by
+          specific categories.
+        </h4>
       </div>
 
       <hr></hr>
-      <div className="w-full flex justify-start items-start  m-0 p-0 flex-col">
+      <div className="w-full flex justify-center items-center  m-0 p-0 flex-col">
         {Houses.loading && (
           <ReactLoading type="spin" color="blue" height={20} width={20} />
         )}
@@ -49,6 +47,15 @@ const HouseForRentComponent = () => {
           </ul>
         )}
       </div>
+      <h2 className="group text-blue-title w-full h-11 flex justify-center items-start  font-body text-[14px] font-bold lg:px-12 px-2">
+        <Link to="/HousesForRent" className="font-body capitalize">
+          see All Properties
+        </Link>
+        <MdOutlineKeyboardDoubleArrowRight
+          size={20}
+          className="text-blue-title-title mr-2 group-hover:scale-125"
+        />
+      </h2>
     </div>
   );
 };

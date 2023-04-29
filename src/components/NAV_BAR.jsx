@@ -47,12 +47,12 @@ const NAV_BAR = () => {
               alt="lightLogo"
             />
           )}
-          <span className="font-title  ml-2  text-blue text-xl">New House</span>
+          <span className="font-title  ml-2  text-blue-title text-xl">New House</span>
         </div>
       </div>
       <ul
         ref={navRef}
-        className="links font-Links tracking-widest  uppercase hidden lg:flex  lg:text-sm text-md justify-center items-center text-blue "
+        className="links font-Links tracking-widest  uppercase hidden lg:flex  lg:text-sm text-md justify-center items-center text-blue-title "
       >
         <li className="link">
           <Link to="/">Home</Link>
@@ -73,7 +73,7 @@ const NAV_BAR = () => {
       <div className="setting h-full  flex items-center justify-center w-12 ">
         {CurrentMode ? (
           <button onClick={hendleMode}>
-            <CiLight size={30} className=" text-blue" />
+            <CiLight size={30} className=" text-blue-title" />
           </button>
         ) : (
           <button onClick={hendleMode}>

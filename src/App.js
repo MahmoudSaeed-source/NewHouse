@@ -10,7 +10,7 @@ import AgentList from './components/AgentList'
 
 function App() {
   return (
-    <div className="App h-{100%} w-screen m-0  bg-gray-200 dark:bg-gray-800 flex justify-center items-start flex-col" >
+    <div className="App h-{100%} w-screen m-0  bg-gray-100 dark:bg-gray-800 flex justify-center items-start flex-col" >
       <NAV_BAR />
         <HeroSection />
       <OurServices />
