@@ -10,7 +10,6 @@ import { BsTelephone } from "react-icons/bs";
 
 const AgentCard = ({agent}) => {
   return (
-<<<<<<< Updated upstream
     <div className="card-content w-80 h-[410px] bg-white flex shadow-lg shadow-blue-100 flex-col ">
       <div className="header-card w-full flex h-[30%] px-4">
         <div className="phot-content w-[40%] h-full  ">
@@ -41,7 +40,7 @@ const AgentCard = ({agent}) => {
         </h6>
         <h6 className="w-full h-4 text-gray-500 font-title text-[13px] text-start">
           <span className=" text-blue-title">agent-languages</span> :
-          {agent.user_languages.join("-")}
+          {agent.user_languages.slice(0,3).join("-")}
         </h6>
       </div>
       <div className="agent-rating w-full h-6 px-4 justify-start ">
@@ -114,14 +113,10 @@ const AgentCard = ({agent}) => {
         <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center ml-2 pointer">
           <AiOutlineMail size={15} className="text-gray-500" />
         </span>
-=======
-    <div className="CardAgent w-[350px] h-[450px] bg-white border-2 shadow-md shadow-gray-200 ">
-      <div className="photo-container  w-full h-[50%]    ">
-        <img src={agent.photo.href} alt={agent.name}  className='w-full h-full '/>
->>>>>>> Stashed changes
-      </div>
+          </div>
+  
     </div>
   );
 }
 
-export default AgentCard
+export default AgentCard;

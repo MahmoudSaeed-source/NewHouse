@@ -13,12 +13,8 @@ const NAV_BAR = () => {
   const dispatch = useDispatch();
   const navRef = useRef()
   const responsive_Nav = () => {
-    if(CurrentMode) {
-      navRef.current.classList.toggle('menu-open-dark') 
-      console.log('yes')
-    }else{
-      navRef.current.classList.toggle('menu-open') 
-      console.log('no')
+    if(!CurrentMode) {
+      navRef.current.classList.toggle("menu-open-dark");
     }
   }
  
@@ -52,7 +48,7 @@ const NAV_BAR = () => {
       </div>
       <ul
         ref={navRef}
-        className="links font-Links tracking-widest  uppercase hidden lg:flex  lg:text-sm text-md justify-center items-center text-blue-title "
+        className="links font-Links tracking-widest hidden uppercase lg:flex  lg:text-sm text-md justify-center items-center text-blue-title "
       >
         <li className="link">
           <Link to="/">Home</Link>
@@ -85,7 +81,7 @@ const NAV_BAR = () => {
         <button onClick={responsive_Nav}>
           <AiOutlineMenuFold
             size={40}
-            className=" Btn ml-3 dark: text-amber-500"
+            className=" Btn ml-3 dark: text-blue-title"
           />
         </button>
       </div>
