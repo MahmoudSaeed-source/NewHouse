@@ -28,8 +28,13 @@ const AgentList = () => {
           <ReactLoading type="spin" color="#e08c04" height={20} width={20} />
         )}
         {!agentListSelector.loading && agentListSelector.agentList.length && (
+<<<<<<< Updated upstream
           <ul className=" w-full h-full   flex lg:justify-start justify-center lg:items-center items-center lg:flex-row flex-col ">
             {agentListSelector.agentList.slice(0, 3).map((agent) => (
+=======
+          <ul className=" w-full h-full   flex lg:justify-center justify-center lg:items-center items-center lg:flex-row flex-col ">
+            {agentListSelector.agentList.slice(8, 11).map((agent) => (
+>>>>>>> Stashed changes
               <li
                 className=" font-body lg:w-1/3 w-full lg:text-xl flex  mb-4 mx-o justify-start  items-center"
                 key={agent.advertiser_id}
