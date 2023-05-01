@@ -28,13 +28,13 @@ const HouseForSaleComponent = ( ) => {
             </h4>
           </div>
 
-          <div className="for-sale w-full flex justify-start items-start  m-0 p-0 ">
+          <div className="for-sale w-full flex justify-center items-start  m-0 p-0 ">
             {Houses.isLoding && (
               <ReactLoading type="spin" color="blue" height={20} width={20} />
             )}
             {!Houses.isLoding && Houses.housesForSale.length && (
               <ul className="card-container  relative md:flex-row flex-col lg:px-0 p-3 ">
-                {Houses.housesForSale.slice(133, 141).map(
+                {Houses.housesForSale.slice(133, 143).map(
                   (house) =>
                     house.photo && (
                       <li

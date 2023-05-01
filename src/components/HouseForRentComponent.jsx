@@ -33,7 +33,7 @@ const HouseForRentComponent = () => {
         )}
         {!Houses.loading && Houses.houseForRent.length && (
           <ul className="card-container relative md:flex-row flex-col lg:px-0 p-3  ">
-            {Houses.houseForRent.slice(0, 9).map(
+            {Houses.houseForRent.slice(0, 12).map(
               (house) =>
                 house.photo && (
                   <li
