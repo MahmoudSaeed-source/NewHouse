@@ -13,8 +13,10 @@ const NAV_BAR = () => {
   const dispatch = useDispatch();
   const navRef = useRef()
   const responsive_Nav = () => {
-    if(!CurrentMode) {
+    if(CurrentMode) {
       navRef.current.classList.toggle("menu-open-dark");
+    } else {
+       navRef.current.classList.toggle("menu-open");
     }
   }
  
@@ -27,7 +29,7 @@ const NAV_BAR = () => {
     dispatch(toggleMode())
   }
   return (
-    <div className=" nav-content items-center flex sticky  justify-center w-full h-20 px-2 md:px-12 sm:px-0 m-0 shadow-lg overflow-hidden  dark:shadow-white dark:shadow-sm  ">
+    <div className=" nav-content items-center flex   justify-center w-full h-20 px-2 md:px-12 sm:px-0 m-0 shadow-lg static  dark:shadow-white dark:shadow-sm  ">
       <div className="logo_content  w-full lg:w-48 overflow-hidden items-center justify-center m-0  ">
         <div className="flex items-center  justify-start overflow-hidden ">
           {CurrentMode ? (
@@ -43,12 +45,14 @@ const NAV_BAR = () => {
               alt="lightLogo"
             />
           )}
-          <span className="font-title  ml-2  text-blue-title text-xl">New House</span>
+          <span className="font-title  ml-2  text-blue-title text-xl">
+            New House
+          </span>
         </div>
       </div>
       <ul
         ref={navRef}
-        className="links font-Links tracking-widest hidden uppercase lg:flex  lg:text-sm text-md justify-center items-center text-blue-title "
+        className=" links font-Links tracking-widest hidden uppercase lg:flex  lg:text-sm text-md justify-center items-center text-blue-title "
       >
         <li className="link">
           <Link to="/">Home</Link>
@@ -77,7 +81,7 @@ const NAV_BAR = () => {
           </button>
         )}
       </div>
-      <div className="toggle h-full w-14  justify-center items-center flex lg:hidden">
+      <div className="toggle h-full w-14  justify-center items-center flex lg:hidden ">
         <button onClick={responsive_Nav}>
           <AiOutlineMenuFold
             size={40}

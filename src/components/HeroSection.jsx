@@ -35,7 +35,7 @@ const HeroSection = () => {
     dispatch(fetchHousesForSale())
   },[])
   return (
-    <div className='HeroSectionWithSearch w-full h-[100vh] bg-white flex justify-center items-center px-14 bg-hero-pattern bg-no-repeat bg-cover bg-fixed'>
+    <div className='HeroSectionWithSearch w-full h-[100vh] bg-white flex justify-center items-center px-14 bg-hero-pattern bg-no-repeat bg-cover bg-fixed '>
       <div className='serchSectin w-full lg:h-60 h-auto bg-white flex justify-center items-center px-4 relative opacity-70 py-6'>
         <h2 className=' HeaderSerch lg:w-1/2 w-full h-12 flex justify-center items-center rounded-full bg-blue-title absolute lg:top-[-12%] top-[-8%] left-50 lg:text-lg text-[14px] text-bold '>THE BEST WAY TO FIND YOUR HOME</h2>
         <div className='searchContent w-full h-full flex lg:flex-row flex-col gap-5 flex-wrap bg-white'>

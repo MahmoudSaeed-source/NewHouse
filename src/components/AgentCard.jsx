@@ -10,7 +10,7 @@ import { BsTelephone } from "react-icons/bs";
 
 const AgentCard = ({agent}) => {
   return (
-    <div className="card-content w-80 h-[410px] bg-white flex shadow-lg shadow-blue-100 flex-col ">
+    <div className="card-content w-80 h-[410px] bg-white flex shadow-lg shadow-blue-100 flex-col cursor-pointer">
       <div className="header-card w-full flex h-[30%] px-4">
         <div className="phot-content w-[40%] h-full  ">
           <img
@@ -40,7 +40,7 @@ const AgentCard = ({agent}) => {
         </h6>
         <h6 className="w-full h-4 text-gray-500 font-title text-[13px] text-start">
           <span className=" text-blue-title">agent-languages</span> :
-          {agent.user_languages.slice(0,3).join("-")}
+          {agent.user_languages.slice(0, 3).join("-")}
         </h6>
       </div>
       <div className="agent-rating w-full h-6 px-4 justify-start ">
@@ -92,29 +92,28 @@ const AgentCard = ({agent}) => {
         )}
       </div>
       <div className="agent-contacted w-full h-12 flex px-4 mt-4  justify-start items-center">
-        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center mr-2 pointer">
+        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center mr-2 cursor-pointer">
           <FiFacebook className="text-gray-500" />
         </span>
-        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center mr-2 pointer">
+        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center mr-2 cursor-pointer">
           <SlSocialTwitter className="text-gray-500" />
         </span>
-        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center mr-2 pointer">
+        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center mr-2 cursor-pointer">
           <AiOutlineInstagram className="text-gray-500" />
         </span>
-        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center mr-2 pointer">
+        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center mr-2 cursor-pointer">
           <TiSocialPinterest className="text-gray-500" />
         </span>
-        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center mr-2 pointer">
+        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center mr-2 cursor-pointer">
           <SlSocialLinkedin size={15} className="text-gray-500" />
         </span>
-        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center ml-12 pointer">
+        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center ml-12 cursor-pointer">
           <BsTelephone size={15} className="text-gray-500" />
         </span>
-        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center ml-2 pointer">
+        <span className="w-6 h-6 rounded-full bg-gray-300 flex justify-center items-center ml-2 cursor-pointer">
           <AiOutlineMail size={15} className="text-gray-500" />
         </span>
-          </div>
-  
+      </div>
     </div>
   );
 }

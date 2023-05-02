@@ -28,10 +28,10 @@ const Footer = () => {
             <div className="flex w-full ">
               <div className="bg-Footer-1  w-20 h-20 bg-center bg-cover mr-6"></div>
               <div className=" w-44 h-20 flex flex-col  justify-center items-start font-body text-gray-300 text-sm ">
-                <p className=" hover:text-blue-hover cursor-pointer">
+                <p className=" hover:text-blue-hover cursor-cursor-pointer">
                   For Open house
                 </p>
-                <p className=" hover:text-blue-hover cursor-pointer">
+                <p className=" hover:text-blue-hover cursor-cursor-pointer">
                   Fresno,CA93722
                 </p>
               </div>
@@ -39,10 +39,10 @@ const Footer = () => {
             <div className="flex w-full  mt-6">
               <div className="bg-Footer-2  w-20 h-20 bg-center bg-cover mr-6"></div>
               <div className=" w-44 h-20 flex flex-col  justify-center items-start font-body text-gray-300 text-sm ">
-                <p className=" hover:text-blue-hover cursor-pointer">
+                <p className=" hover:text-blue-hover cursor-cursor-pointer">
                   For Sale
                 </p>
-                <p className=" hover:text-blue-hovercursor-pointer">
+                <p className=" hover:text-blue-hovercursor-cursor-pointer">
                   3/15 Dudley Street,
                 </p>
               </div>
@@ -51,19 +51,19 @@ const Footer = () => {
           <div className="lg:w-1/4 w-full  flex flex-col items-start  lg:px-6 px-0 lg:mb-0 mb-4">
             <h3 className="font-body text-blue-title mb-6 ">Useful links</h3>
             <ul className="w-full font-body text-gray-300">
-              <li className="mb-2 h-6 hover:text-blue-800 capitalize font-title pointer">
+              <li className="mb-2 h-6 hover:text-blue-800 capitalize font-title cursor-pointer">
                 Home
               </li>
               <hr />
-              <li className="mb-2 h-6  hover:text-blue-800 capitalize font-title pointer">
+              <li className="mb-2 h-6  hover:text-blue-800 capitalize font-title cursor-pointer">
                 forSale
               </li>
               <hr />
-              <li className="mb-2 h-6  hover:text-blue-800 capitalize font-title pointer">
+              <li className="mb-2 h-6  hover:text-blue-800 capitalize font-title cursor-pointer">
                 for Rent
               </li>
               <hr />
-              <li className="mb-2 h-6  hover:text-blue-800 capitalize font-title pointer">
+              <li className="mb-2 h-6  hover:text-blue-800 capitalize font-title cursor-pointer">
                 About
               </li>
               <hr />

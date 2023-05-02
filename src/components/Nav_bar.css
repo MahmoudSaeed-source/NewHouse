@@ -5,9 +5,7 @@
     font-size: 16px;
     margin-right: 20px;
 }
-li:hover{
-    color: #e08c04
-}
+
 
 .links{
     height: 100%;
@@ -16,12 +14,12 @@ li:hover{
     overflow: hidden;
 }
 .menu-open{
-width: 100% !important;
+width: 60% !important;
 height: 300px !important;
-background-color: #fff !important;
-color:#f6a60b !important;
+background-color: rgb(243 244 246) !important;
+color:#45a9d7!important;
 position: absolute !important;
-top: 91px !important;
+top: 80px !important;
 right: 0 !important;
 overflow: hidden;
 display: flex !important;
@@ -35,14 +33,13 @@ padding: 0;
 margin: 0;
 }
 .menu-open-dark{
-width: 100% ;
+width: 60% ;
 height: 300px !important;
-background-color: #000 !important;
-color:#f6a60b !important;
+background-color: rgb(31 41 55) !important;
+color:#45a9d7 !important;
 position: absolute !important;
-top: 91px !important;
+top: 80px !important;
 right: 0 !important;
-
 display: flex !important;
 flex-direction: column;
 align-items: center;
@@ -61,10 +58,12 @@ margin: 0;
     align-items: center;
     justify-content: center;
     margin: 0;
+    border-bottom:2px solid #083a52;
 }
 .menu-open li:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    color:#e08c04
+    border-left: 2px solid #083a52;
+   
 }
 .menu-open-dark li{
     display: flex;
@@ -74,8 +73,9 @@ margin: 0;
     align-items: center;
     justify-content: center;
     margin: 0;
+    border-bottom: 2px solid #3094c2;
 }
 .menu-open-dark li:hover{
     box-shadow: rgba(145, 142, 142, 0.35) 0px 5px 15px;
-    color:#d38b06
+    border-left: 2px solid #3094c2;
 }

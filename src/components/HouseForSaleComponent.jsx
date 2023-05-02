@@ -33,7 +33,7 @@ const HouseForSaleComponent = ( ) => {
               <ReactLoading type="spin" color="blue" height={20} width={20} />
             )}
             {!Houses.isLoding && Houses.housesForSale.length && (
-              <ul className="card-container  relative md:flex-row flex-col lg:px-0 p-3 ">
+              <ul className="card-container  relative md:flex-row flex-col lg:px-0 p-3  ">
                 {Houses.housesForSale.slice(133, 143).map(
                   (house) =>
                     house.photo && (
