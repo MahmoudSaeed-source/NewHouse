@@ -30,7 +30,7 @@ const AgentList = () => {
         {!agentListSelector.loading && agentListSelector.agentList.length && (
 
           <ul className=" w-full h-full   flex lg:justify-start justify-center lg:items-center items-center lg:flex-row flex-col ">
-            {agentListSelector.agentList.slice(14, 18).map((agent) => (
+            {agentListSelector.agentList.slice(0, 3).map((agent) => (
 
               <li
                 className=" font-body lg:w-1/3 w-full lg:text-xl flex  mb-4 mx-o justify-center  items-center"

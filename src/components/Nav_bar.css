@@ -4,6 +4,13 @@
     text-transform: uppercase;
     font-size: 16px;
     margin-right: 20px;
+    padding: 12px;
+   
+}
+.link:hover{
+    background-color:#3190b6;
+    border-radius:4px;
+ 
 }
 
 
@@ -78,4 +85,20 @@ margin: 0;
 .menu-open-dark li:hover{
     box-shadow: rgba(145, 142, 142, 0.35) 0px 5px 15px;
     border-left: 2px solid #3094c2;
+}
+.nav-On-scroll{
+    position: fixed !important;
+        top: 0 !important;
+        z-index: 10000000 !important;
+        background-color: #fff;
+        color: #38bdf8;
+}
+.nav-On-scroll li{
+    color:#38bdf8
+}
+.nav-On-scroll li:hover{
+    color:#fff
+}
+.nav-On-scroll span{
+    color:#38bdf8
 }

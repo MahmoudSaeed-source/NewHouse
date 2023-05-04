@@ -1,4 +1,4 @@
-import React,{ useRef} from 'react'
+import React, { useRef, useEffect } from "react";
 import darkLogo from '../assets/images/darklogo.png';
 import lightLogo from '../assets/images/lightlogo.png';
 import { MdDarkMode } from 'react-icons/md';
@@ -12,6 +12,7 @@ const NAV_BAR = () => {
   const CurrentMode = useSelector(state => state.mode.currentMode) 
   const dispatch = useDispatch();
   const navRef = useRef()
+  const nav_ONScroll = useRef()
   const responsive_Nav = () => {
     if(CurrentMode) {
       navRef.current.classList.toggle("menu-open-dark");
@@ -28,8 +29,25 @@ const NAV_BAR = () => {
     }
     dispatch(toggleMode())
   }
+ useEffect(() => {
+   const handleScroll = () => {
+     if (window.scrollY >= 100) {
+       console.log("Scrolled past 100 pixels");
+     nav_ONScroll.current.classList.add("nav-On-scroll");
+     } else {
+        nav_ONScroll.current.classList.remove("nav-On-scroll");
+     }
+   };
+   window.addEventListener("scroll", handleScroll);
+   return () => {
+     window.removeEventListener("scroll", handleScroll);
+   };
+ }, []);
   return (
-    <div className=" nav-content items-center flex   justify-center w-full h-20 px-2 md:px-12 sm:px-0 m-0 shadow-lg static  dark:shadow-white dark:shadow-sm  ">
+    <div
+      className=" nav-content items-center flex   justify-center w-full h-20 px-2 md:px-12 sm:px-0 m-0 shadow-lg static z-[10000] dark:shadow-sm "
+      ref={nav_ONScroll}
+    >
       <div className="logo_content  w-full lg:w-48 overflow-hidden items-center justify-center m-0  ">
         <div className="flex items-center  justify-start overflow-hidden ">
           {CurrentMode ? (
@@ -45,14 +63,14 @@ const NAV_BAR = () => {
               alt="lightLogo"
             />
           )}
-          <span className="font-title  ml-2  text-blue-title text-xl">
+          <span className="tag font-title  ml-2  text-white text-xl">
             New House
           </span>
         </div>
       </div>
       <ul
         ref={navRef}
-        className=" links font-Links tracking-widest hidden uppercase lg:flex  lg:text-sm text-md justify-center items-center text-blue-title "
+        className=" links font-Links tracking-widest hidden uppercase lg:flex  lg:text-sm text-md justify-center items-center text-white "
       >
         <li className="link">
           <Link to="/">Home</Link>
@@ -73,7 +91,11 @@ const NAV_BAR = () => {
       <div className="setting h-full  flex items-center justify-center w-12 ">
         {CurrentMode ? (
           <button onClick={hendleMode}>
-            <CiLight size={30} className=" text-blue-title" />
+           
+            <CiLight
+              size={30}
+              className=" text-blue-title font-bold" 
+            />
           </button>
         ) : (
           <button onClick={hendleMode}>

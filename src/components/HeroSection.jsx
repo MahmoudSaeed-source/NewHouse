@@ -35,72 +35,22 @@ const HeroSection = () => {
     dispatch(fetchHousesForSale())
   },[])
   return (
-    <div className='HeroSectionWithSearch w-full h-[100vh] bg-white flex justify-center items-center px-14 bg-hero-pattern bg-no-repeat bg-cover bg-fixed '>
-      <div className='serchSectin w-full lg:h-60 h-auto bg-white flex justify-center items-center px-4 relative opacity-70 py-6'>
-        <h2 className=' HeaderSerch lg:w-1/2 w-full h-12 flex justify-center items-center rounded-full bg-blue-title absolute lg:top-[-12%] top-[-8%] left-50 lg:text-lg text-[14px] text-bold '>THE BEST WAY TO FIND YOUR HOME</h2>
-        <div className='searchContent w-full h-full flex lg:flex-row flex-col gap-5 flex-wrap bg-white'>
-          <from className='w-full h-full flex items-center justify-center p-4 flex-wrap bg-white' onSubmit={handleSubmitForm}>
-            <select className='w-60 h-12  mr-2 font-body text-lg border-2 outline-1 outline-slate-300 bg-white lg:mb-0 mb-5 '
-              name='state' value={selectedValues.state}
-              onChange={handleDateForm}
-            >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100 ' >All State</option>
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >New York</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Staten Island</option>
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Brooklyn</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Bronx</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Jamaica</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Whitestone</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Manhattan</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Flushing</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Forest Hills</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Astoria</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Long Island City</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Richmond Hill</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Elmhurst</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Far Rockaway</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Bellerose</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >Ozone Park</option >
-            </select>
-            <select className='w-60 h-12  mr-2 font-body text-lg border-2 outline-1 outline-slate-300 bg-white lg:mb-0 mb-5 '
-              name="type" value={selectedValues.type}
-              onChange={handleDateForm}
-            >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >All Type</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >Condo</option>
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >Single_family</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >Multi_family</option >
-            </select>
-            <select className='w-60 h-12  mr-2 font-body text-lg border-2 outline-1 outline-slate-300 bg-white lg:mb-0 mb-5  '
-              name='bedrooms' value={selectedValues.bedrooms}
-              onChange={handleDateForm}
-            >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >All BedRooms</option>
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100 border-1' >1</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >2</option>
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >3</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >4</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >5</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >6</option >
-            </select>
-            <select className='w-60 h-12  mr-2 font-body text-lg border-2 outline-1 outline-slate-300 bg-white lg:mb-0 mb-5 '
-              name='bathrooms' value={selectedValues.bathrooms}
-              onChange={handleDateForm}
-            >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center  bg-green-100' >All BathRooms</option>
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >1</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >2</option>
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >3</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >4</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >5</option >
-              <option className='w-full h-full font-body text-lg upperCAse border-2 flex justify-center items-center bg-green-100' >6</option >
-            </select>
-            <button type='submit' onClick={handleSubmitForm} className=' submit   lg:w-1/3 w-1/2 h-12 flex justify-center items-center rounded-full bg-blue-title absolute lg:bottom-[-11%]  bottom-[-8%] left-50 lg:text-lg text-[14px] text-bold '>Search Property</button>
-          </from>
-        </div>
+    <div className="HeroSectionWithSearch w-full h-[100vh] bg-white flex justify-center items-center mt-[-100px]  bg-hero-pattern bg-no-repeat bg-cover bg-fixed ">
+      <div
+        className="w-full h-full flex justify-center items-center flex-col "
+        style={{ backgroundColor: "#21b4f14d" }}
+      >
+        <h2 className="w-[full] h-24 text-white font-bold font-body md:text-[40px] text-[30px] capitalize md:mb-0 mb-4 ">
+          Find Your Dream Home
+        </h2>
+        <p className="md:w-[50%] h-auto  w-full text-white font-bold font-body text-[18px] capitalize ">
+          We are recognized for exceeding client expectations and delivering
+          great results through dedication, ease of process, and extraordinary
+          services to our worldwide clients.e
+        </p>
       </div>
     </div>
-  )
+  );
 }
 
 export default HeroSection

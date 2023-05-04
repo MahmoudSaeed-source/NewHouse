@@ -1,19 +1,19 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const headers = {
-    method: 'GET',
-    url: 'https://realty-in-us.p.rapidapi.com/properties/list-for-sale',
-    params: {
-        state_code: 'NY',
-        city: 'New York City',
-        offset: '0',
-        limit: '200',
-        sort: 'relevance'
-    },
-    headers: {
-        'X-RapidAPI-Key': 'ad1d10c3f5msh41840c5709f1194p1f12ebjsn0118d33dde71',
-        'X-RapidAPI-Host': 'realty-in-us.p.rapidapi.com'
-    }
+const options = {
+  method: 'GET',
+  url: 'https://realty-in-us.p.rapidapi.com/properties/list-for-sale',
+  params: {
+    state_code: 'NY',
+    city: 'New York City',
+    offset: '0',
+    limit: '200',
+    sort: 'relevance'
+  },
+  headers: {
+    'X-RapidAPI-Key': 'b8a0bfbeedmsh410cbd743fd37efp1a544ajsnb7c0760ed311',
+    'X-RapidAPI-Host': 'realty-in-us.p.rapidapi.com'
+  }
 };
 
 
@@ -24,7 +24,7 @@ const initialState = {
 }
 export const fetchHousesForSale = createAsyncThunk('forSale/fetchHousesForSale',async () => {
     try {
-        const response = await axios.request(headers);
+        const response = await axios.request(options);
            return response.data.listings;
     } catch(error) {
         console.error(error);
