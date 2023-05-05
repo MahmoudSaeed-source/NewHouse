@@ -20,6 +20,7 @@ const options = {
 export const fetchHousesForRent = createAsyncThunk('houseForRent/fetchHoueseForRent',async () => {
     try {
         const response = await axios.request(options)
+        console.log(response.data.listings)
         return response.data.listings;
     } catch (error) {
         console.error(error);

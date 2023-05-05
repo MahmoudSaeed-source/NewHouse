@@ -10,7 +10,7 @@
       margin: 0;
 }
 .Card-content{
-      width: auto;
+      width: 30%;
       height: auto;
       display: flex;
       margin-bottom: 20px;

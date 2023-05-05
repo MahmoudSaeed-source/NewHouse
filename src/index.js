@@ -30,6 +30,10 @@ const router = createBrowserRouter([
     element: <HousesForRent />
   },
   {
+    path: 'HousesForRent/:HouseId',
+    element: <HouseDatailes />
+  },
+  {
     path: "HousesForSale/:HouseId",
     element: <HouseDatailes />,
   },

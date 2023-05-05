@@ -1,6 +1,5 @@
 import React,{ useEffect ,useState} from 'react'
 import Card from '../components/Card'
-import { BsHouseHeartFill } from 'react-icons/bs'
 import ReactLoading from 'react-loading';
 import { fetchHousesForRent } from '../app/features/forRent/ForRentSlice'
 import { useDispatch,useSelector } from 'react-redux'
@@ -109,26 +108,36 @@ const HousesForRent= () => {
                     </div>
                 </div>
             </div>
-            <div className="h-100 w-full flex justify-start items-center mt-8 ">
-                <h2 className='w-full h-full px-12  text-amber-500  uppercase text-body flex  items-center  font-bold text-2xl'>  <BsHouseHeartFill size={40} className='mr-2' />houses for Rent</h2>
+            <div className="content w-full h-auto flex md:flex-row flex-col justify-start items-start ">
+                <div className="leftSide w-[70%] h-auto mt-4">
+                    <div className="h-100 w-full flex justify-start items-center  ">
+                        <h2 className='w-full h-full px-12  text-blue-title  uppercase text-body flex  items-center py-6 border-b-2 border-gray-400  text-2xl'> Properties Listing</h2>
+                    </div>
+                    {
+                        Houses.loading && <ReactLoading type="spin" color="#e08c04" height={40} width={20} />
+                    }
+                    <div className='w-full h-auto overflow-auto mt-12 p-0 flex justify-center items-center'>
+                        {!Houses.loading && filterHouses.length > 0 && (
+                            <ul className='card-container dark:bg-black   mt-20 '>
+                                {
+                                    filterHouses.map(house => (
+                                        house.photo && <li className='Card-content font-body lg:w-[20%] w-full h-auto lg:text-xl text-sm ' key={house.property_id}><Card house={house} /></li>
+                                    ))
+                                }
+                            </ul>
+                        )}
+                        {!Houses.loading && filterHouses.length === 0 && (
+                            <p className="text-center text-xl mt-4">No matching houses found.</p>
+                        )}
+                    </div>
+                </div>
+                <div className="rightSide w-[30%] h-auto border-2 border-red-300 mt-4">
+                    <h2>right side</h2>
+                </div>
             </div>
-                {
-                    Houses.loading && <ReactLoading type="spin" color="#e08c04" height={40} width={20} />
-                }
-            <div className='w-full h-auto overflow-auto mt-12 p-0 flex justify-center items-center'>
-                {!Houses.loading&& filterHouses.length > 0  && (                 
-                    <ul className='card-container dark:bg-black   mt-20 '>
-                        {
-                            filterHouses.map(house => (
-                                house.photo && <li className='Card-content font-body lg:w-[30%] w-full lg:text-xl text-sm' key={house.property_id}><Card house={house}/></li>
-                            ))
-                        }
-                    </ul>
-                )}
-                {!Houses.loading&& filterHouses.length === 0 && (
-          <p className="text-center text-xl mt-4">No matching houses found.</p>
-        )}
-            </div>
+         
+               
+          
             <Footer/>
     </div>
   )
