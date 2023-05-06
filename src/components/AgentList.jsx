@@ -1,5 +1,5 @@
 import React,{ useEffect } from 'react'
-import ReactLoading from 'react-loading';
+import {PropagateLoader} from "react-spinners";
 import { fetchAgentList } from '../app/features/agent/Agent'
 import { useDispatch,useSelector } from 'react-redux';
 import AgentCard from '../components/AgentCard';
@@ -12,7 +12,7 @@ const AgentList = () => {
     dispatch(fetchAgentList())
 },[])
   return (
-    <div className="w-full h-auto bg-bull-300 lg:mr-12 mr-0 lg:ml-12 ml-0 ">
+    <div className="w-full h-auto bg-bull-300 lg:mr-12 mr-0 lg:ml-12 ml-0 py-10 ">
       <div className="w-full h-32 flex justify-start items-center flex-col">
         <h2 className="text-blue-title   text-[20px] w-full h-14 flex items-center justify-center font-body capitalize ">
           Real Estate Agents
@@ -24,14 +24,10 @@ const AgentList = () => {
       </div>
 
       <div className="w-full h-auto flex lg:justify-start justify-center lg-mx-12 lg:items-center  items-center m-0 p-0 flex-col">
-        {agentListSelector.loading && (
-          <ReactLoading type="spin" color="#e08c04" height={20} width={20} />
-        )}
+        {agentListSelector.loading && <PropagateLoader color="#38bdf8" />}
         {!agentListSelector.loading && agentListSelector.agentList.length && (
-
           <ul className=" w-full h-full   flex lg:justify-start justify-center lg:items-center items-center lg:flex-row flex-col ">
             {agentListSelector.agentList.slice(0, 3).map((agent) => (
-
               <li
                 className=" font-body lg:w-1/3 w-full lg:text-xl flex  mb-4 mx-o justify-center  items-center"
                 key={agent.advertiser_id}

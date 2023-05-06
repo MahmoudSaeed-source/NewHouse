@@ -8,41 +8,41 @@ import { Link } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
 import { toggleMode } from '../app/features/darkMode/darkModeSlice'
 import  './Nav_bar.css'
-const NAV_BAR = () => {
-  const CurrentMode = useSelector(state => state.mode.currentMode) 
+const NAV_BAR = ({ color }) => {
+  const CurrentMode = useSelector((state) => state.mode.currentMode);
   const dispatch = useDispatch();
-  const navRef = useRef()
-  const nav_ONScroll = useRef()
+  const navRef = useRef();
+  const nav_ONScroll = useRef();
   const responsive_Nav = () => {
-    if(CurrentMode) {
+    if (CurrentMode) {
       navRef.current.classList.toggle("menu-open-dark");
     } else {
-       navRef.current.classList.toggle("menu-open");
+      navRef.current.classList.toggle("menu-open");
     }
-  }
- 
+  };
+
   const hendleMode = () => {
-    if(!CurrentMode) {
-      document.body.classList.add('dark');
+    if (!CurrentMode) {
+      document.body.classList.add("dark");
     } else {
-      document.body.classList.remove('dark')
+      document.body.classList.remove("dark");
     }
-    dispatch(toggleMode())
-  }
- useEffect(() => {
-   const handleScroll = () => {
-     if (window.scrollY >= 100) {
-       console.log("Scrolled past 100 pixels");
-     nav_ONScroll.current.classList.add("nav-On-scroll");
-     } else {
+    dispatch(toggleMode());
+  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 100) {
+        console.log("Scrolled past 100 pixels");
+        nav_ONScroll.current.classList.add("nav-On-scroll");
+      } else {
         nav_ONScroll.current.classList.remove("nav-On-scroll");
-     }
-   };
-   window.addEventListener("scroll", handleScroll);
-   return () => {
-     window.removeEventListener("scroll", handleScroll);
-   };
- }, []);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div
       className=" nav-content items-center flex   justify-center w-full h-20 px-2 md:px-12 sm:px-0 m-0 shadow-lg static z-[10000] dark:shadow-sm "
@@ -63,7 +63,10 @@ const NAV_BAR = () => {
               alt="lightLogo"
             />
           )}
-          <span className="tag font-title  ml-2  text-white text-xl">
+          <span
+            className="tag font-title  ml-2  text-white text-xl"
+            style={{ color: color }}
+          >
             New House
           </span>
         </div>
@@ -71,6 +74,7 @@ const NAV_BAR = () => {
       <ul
         ref={navRef}
         className=" links font-Links tracking-widest hidden uppercase lg:flex  lg:text-sm text-md justify-center items-center text-white "
+        style={{ color: color }}
       >
         <li className="link">
           <Link to="/">Home</Link>
@@ -91,11 +95,7 @@ const NAV_BAR = () => {
       <div className="setting h-full  flex items-center justify-center w-12 ">
         {CurrentMode ? (
           <button onClick={hendleMode}>
-           
-            <CiLight
-              size={30}
-              className=" text-blue-title font-bold" 
-            />
+            <CiLight size={30} className=" text-blue-title font-bold" />
           </button>
         ) : (
           <button onClick={hendleMode}>
@@ -113,6 +113,6 @@ const NAV_BAR = () => {
       </div>
     </div>
   );
-}
+};
 
 export default NAV_BAR

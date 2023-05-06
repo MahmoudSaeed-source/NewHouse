@@ -1,6 +1,6 @@
 import "./houseForSale.css";
 import React, { useEffect } from "react";
-import ReactLoading from "react-loading";
+import {PropagateLoader} from "react-spinners";
 import { fetchHousesForRent } from "../app/features/forRent/ForRentSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -27,10 +27,8 @@ const HouseForRentComponent = () => {
       </div>
 
       <hr></hr>
-      <div className="w-full flex justify-center items-center  m-0 p-0 flex-col">
-        {Houses.loading && (
-          <ReactLoading type="spin" color="blue" height={20} width={20} />
-        )}
+      <div className="w-full flex justify-center items-center  m-0 p-0 flex-col py-10">
+        {Houses.loading && <div className="w-full h-auto flex justify-center items-center py-24"><PropagateLoader color="#38bdf8" /></div>}
         {!Houses.loading && Houses.houseForRent.length && (
           <ul className="card-container relative md:flex-row flex-col lg:px-0 p-3  ">
             {Houses.houseForRent.slice(0, 12).map(
