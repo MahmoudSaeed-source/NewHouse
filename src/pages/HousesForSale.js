@@ -8,23 +8,9 @@ import Footer from "../components/Footer";
 const HousesForSale = () => {
   const dispatch = useDispatch();
   const Houses = useSelector((state) => state.forSale);
+  const [itemsPerPage,setItemsPerPage] = useState(20);
+  const [currentPage,setCurrentPage] = useState(1);
   const HousesForSale = Houses.housesForSale;
-  const [itemsPerPage, setItemsPerPage] = useState(20);
-  const [currentPage, setCurrentPage] = useState(1);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentProducts = HousesForSale.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
-  const totalPages = Math.ceil(HousesForSale.length / itemsPerPage);
-  const pageNumbers = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
-  function handlePageChange(event) {
-    setCurrentPage(Number(event.target.dataset.pageNumber));
-    window.scrollTo(0, 0);
-  }
 
   const [selectedValues, setSelectedValues] = useState({
     state: " State",
@@ -32,6 +18,7 @@ const HousesForSale = () => {
     bedrooms: " BedRooms",
     bathrooms: " BathRooms",
   });
+
   const handleDateForm = (e) => {
     const fieldName = e.target.getAttribute("name");
     const { value: fieldValue } = e.target;
@@ -40,24 +27,27 @@ const HousesForSale = () => {
       [fieldName]: fieldValue,
     }));
   };
+
   const handleSubmitForm = (e) => {
     e.preventDefault();
     console.log(selectedValues);
   };
+
   useEffect(() => {
     dispatch(fetchHousesForSale());
-  }, []);
+  },[]);
+  
   const filterHouses = Houses.housesForSale.filter((house) => {
     return (
       (house.prop_type
         .toLowerCase()
         .includes(selectedValues.type.toLowerCase()) ||
-        selectedValues.type === " Type") &&
-      (house.address_new.city
+        selectedValues.type === "Type") &&
+      (house.prop_type
         .toLowerCase()
         .includes(selectedValues.state.toLowerCase()) ||
         selectedValues.state === "State") &&
-      (house.beds
+      (house.address_new.city
         .toString()
         .toLowerCase()
         .includes(selectedValues.bedrooms.toLowerCase()) ||
@@ -69,7 +59,23 @@ const HousesForSale = () => {
           .includes(selectedValues.bathrooms.toLowerCase()))
     );
   });
-    
+
+ 
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const totalPages = Math.ceil(HousesForSale.length / itemsPerPage);
+  const pageNumbers = [];
+  for(let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+  function handlePageChange(event) {
+    setCurrentPage(Number(event.target.dataset.pageNumber));
+    window.scrollTo(0,0);
+  }
+
+  const currentProducts = HousesForSale.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );  
   return (
     <div className=" w-full h-auto flex justify-center items-center  flex-col  bg-gray-100 dark:bg-gray-800  ">
       <NAV_BAR color='#38bdf8' />
@@ -84,9 +90,9 @@ const HousesForSale = () => {
             <div className="w-full h-auto flex justify-center items-center py-24"><PropagateLoader color="#38bdf8" /></div>
           )}
           <div className="w-full h-auto overflow-auto lg:m-5 m-0 p-0 flex justify-center items-center flex-col ">
-            {!Houses.isLoding && filterHouses.length > 0 && (
+            {!Houses.isLoding && currentProducts.length > 0 && (
               <ul className="card-container bg-gray-100 dark:bg-gray-800 m-0 h-auto ">
-                {filterHouses.map(
+                {currentProducts.map(
                   (house) =>
                     house.photo && (
                       <li
