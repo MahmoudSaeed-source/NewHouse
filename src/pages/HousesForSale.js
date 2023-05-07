@@ -10,6 +10,7 @@ const HousesForSale = () => {
   const Houses = useSelector((state) => state.forSale);
   const HousesForSale = Houses.housesForSale;
   const [itemsPerPage, setItemsPerPage] = useState(20);
+  const [FormSearchHouses,setFormSearchHouses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentProducts = HousesForSale.slice(
@@ -43,32 +44,35 @@ const HousesForSale = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     console.log(selectedValues);
+    const filterHouses = Houses.housesForSale.filter((house) => {
+      return (
+        (house.prop_type
+          .toLowerCase()
+          .includes(selectedValues.type.toLowerCase()) ||
+          selectedValues.type === " Type") &&
+        (house.address_new.city
+          .toLowerCase()
+          .includes(selectedValues.state.toLowerCase()) ||
+          selectedValues.state === "State") &&
+        (house.beds
+          .toString()
+          .toLowerCase()
+          .includes(selectedValues.bedrooms.toLowerCase()) ||
+          selectedValues.bedrooms === " BedRooms") &&
+        (selectedValues.bathrooms === "BathRooms" ||
+          house.baths
+            .toString()
+            .toLowerCase()
+            .includes(selectedValues.bathrooms.toLowerCase()))
+      );
+    });
+    setFormSearchHouses(filterHouses)
+    console.log(FormSearchHouses)
   };
   useEffect(() => {
     dispatch(fetchHousesForSale());
   }, []);
-  const filterHouses = Houses.housesForSale.filter((house) => {
-    return (
-      (house.prop_type
-        .toLowerCase()
-        .includes(selectedValues.type.toLowerCase()) ||
-        selectedValues.type === " Type") &&
-      (house.address_new.city
-        .toLowerCase()
-        .includes(selectedValues.state.toLowerCase()) ||
-        selectedValues.state === "State") &&
-      (house.beds
-        .toString()
-        .toLowerCase()
-        .includes(selectedValues.bedrooms.toLowerCase()) ||
-        selectedValues.bedrooms === " BedRooms") &&
-      (selectedValues.bathrooms === "BathRooms" ||
-        house.baths
-          .toString()
-          .toLowerCase()
-          .includes(selectedValues.bathrooms.toLowerCase()))
-    );
-  });
+  
     
   return (
     <div className=" w-full h-auto flex justify-center items-center  flex-col  bg-gray-100 dark:bg-gray-800  ">
@@ -84,9 +88,10 @@ const HousesForSale = () => {
             <div className="w-full h-auto flex justify-center items-center py-24"><PropagateLoader color="#38bdf8" /></div>
           )}
           <div className="w-full h-auto overflow-auto lg:m-5 m-0 p-0 flex justify-center items-center flex-col ">
-            {!Houses.isLoding && filterHouses.length > 0 && (
+            {!Houses.isLoding && FormSearchHouses.length <=0 && currentProducts.length > 0 ? (
+              <>
               <ul className="card-container bg-gray-100 dark:bg-gray-800 m-0 h-auto ">
-                {filterHouses.map(
+                  {currentProducts.map(
                   (house) =>
                     house.photo && (
                       <li
@@ -98,13 +103,7 @@ const HousesForSale = () => {
                     )
                 )}
               </ul>
-            )}
-            {!Houses.isLoding && filterHouses.length === 0 && (
-              <p className="text-center text-xl mt-4">
-                No matching houses found.
-              </p>
-            )}
-            <div className="w-full h-10 text-[14px] font-body flex  justify-center items-center">
+                 <div className="w-full h-10 text-[14px] font-body flex  justify-center items-center">
               {pageNumbers.map((pageNumber) => (
                 <button
                   className={`6 md:w-4 w-3 md:h-4 h-2 p-3 lg:mr-2 mr-1  md:text-[12px] text-[10px] rounded-full flex justify-center items-center bg-gray-500 cursor-pointer hover:bg-gray-400  hover:text-blue-title active:text-blue-hover ${
@@ -118,7 +117,47 @@ const HousesForSale = () => {
                   {pageNumber}
                 </button>
               ))}
-            </div>
+                </div>
+              </>
+            ) : <>
+              <ul className="card-container bg-gray-100 dark:bg-gray-800 m-0 h-auto ">
+                  {FormSearchHouses.slice(
+                    startIndex,
+                    startIndex + itemsPerPage
+                  ).map(
+                  (house) =>
+                    house.photo && (
+                      <li
+                        className="Card-content font-body lg:w-[30%] w-full h-auto lg:text-xl text-sm"
+                        key={house.property_id}
+                      >
+                        <Card house={house} />
+                      </li>
+                    )
+                )}
+              </ul>
+              <div className="w-full h-10 text-[14px] font-body flex  justify-center items-center">
+                {pageNumbers.map((pageNumber) => (
+                  <button
+                    className={`6 md:w-4 w-3 md:h-4 h-2 p-3 lg:mr-2 mr-1  md:text-[12px] text-[10px] rounded-full flex justify-center items-center bg-gray-500 cursor-pointer hover:bg-gray-400  hover:text-blue-title active:text-blue-hover ${currentPage === pageNumber && "bg-blue-title text-blue-title"
+                      }`}
+                    key={pageNumber}
+                    data-page-number={pageNumber}
+                    onClick={handlePageChange}
+                    disabled={currentPage === pageNumber}
+                  >
+                    {pageNumber}
+                  </button>
+                ))}
+                  {!Houses.isLoding && FormSearchHouses.length === 0 && (
+                    <p className="text-center text-xl mt-4">
+                      No matching houses found.
+                    </p>
+                  )}
+              </div>
+            </>}
+       
+         
           </div> 
         </div>
         <div className="rightSide md:w-[20%] flex w-full h-auto lg:ml-2 ml-0 mt-4 flex-col">
