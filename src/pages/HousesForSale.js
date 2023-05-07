@@ -8,6 +8,8 @@ import Footer from "../components/Footer";
 const HousesForSale = () => {
   const dispatch = useDispatch();
   const Houses = useSelector((state) => state.forSale);
+  const [itemsPerPage,setItemsPerPage] = useState(20);
+  const [currentPage,setCurrentPage] = useState(1);
   const HousesForSale = Houses.housesForSale;
   const [itemsPerPage, setItemsPerPage] = useState(20);
   const [FormSearchHouses,setFormSearchHouses] = useState([]);
@@ -33,6 +35,7 @@ const HousesForSale = () => {
     bedrooms: " BedRooms",
     bathrooms: " BathRooms",
   });
+
   const handleDateForm = (e) => {
     const fieldName = e.target.getAttribute("name");
     const { value: fieldValue } = e.target;
@@ -41,6 +44,7 @@ const HousesForSale = () => {
       [fieldName]: fieldValue,
     }));
   };
+
   const handleSubmitForm = (e) => {
     e.preventDefault();
     console.log(selectedValues);
@@ -69,6 +73,7 @@ const HousesForSale = () => {
     setFormSearchHouses(filterHouses)
     console.log(FormSearchHouses)
   };
+
   useEffect(() => {
     dispatch(fetchHousesForSale());
   }, []);
