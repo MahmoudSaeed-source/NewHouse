@@ -4,7 +4,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 const HomeCard = ({ house }) => {
     return (
-      <Link to={`/HousesForSale/${house.property_id}`} className='w-full'>
+      <Link to={`/houses-for-sale/${house.property_id}`} className="w-full">
         <div className=" group homeCard md:w-[250px]  w-full h-[200px] bg-green-300  cursor-pointer overflow-hidden ">
           <div
             className="w-full h-full  "

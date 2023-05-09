@@ -5,7 +5,10 @@ const Card = ({ house }) => {
   return (
     <div className="w-full h-full  flex items-center flex-col mb-2  shadow-sm bg-white dark:shadow-white  shadow-black  relative rounded-md ">
       <div className=" group text-2xl w-full h-auto flex  items-center  pt-1 relative overflow-hidden ">
-        <div className='w-20 h-10 p-4 absolute bottom-4 bg-blue-hover flex justify-center items-center text-white text-[14px] font-links shadow-md rounded-sm'> {house.price}</div>
+        <div className="w-20 h-10 p-4 absolute bottom-4 bg-blue-hover flex justify-center items-center text-white text-[14px] font-links shadow-md rounded-sm">
+          {" "}
+          {house.price}
+        </div>
         <img
           className="w-full h-full  hover:scale-110 overflow-hidden transition-all duration-300 ease-linear cursor-pointer"
           src={house.photo}
@@ -38,7 +41,7 @@ const Card = ({ house }) => {
         </div>
       </div>
       <h2 className="group text-gray-800 w-full h-10  flex justify-start items-center  font-links text-[12px]   px-4">
-        <Link to={`/HousesForSale/${house.property_id}`}>Read More</Link>
+        <Link to={`/houses-for-sale/${house.property_id}`}>Read More</Link>
         <MdOutlineKeyboardDoubleArrowRight
           size={15}
           className="text-blue-title-title mr-2 group-hover:scale-125 flex justify-center items-center text-blue-title"

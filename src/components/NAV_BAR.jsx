@@ -80,10 +80,10 @@ const NAV_BAR = ({ color }) => {
           <Link to="/">Home</Link>
         </li>
         <li className="link">
-          <Link to="/HousesForRent">For_Rent</Link>
+          <Link to="/houses-for-rent">For_Rent</Link>
         </li>
         <li className="link">
-          <Link to="/HousesForSale">For_Sale</Link>
+          <Link to="/houses-for-sale">For_Sale</Link>
         </li>
         <li className="link">
           <Link to="/">About</Link>

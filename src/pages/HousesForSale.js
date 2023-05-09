@@ -5,11 +5,10 @@ import { fetchHousesForSale } from "../app/features/forSale/forSale";
 import { useDispatch, useSelector } from "react-redux";
 import NAV_BAR from "../components/NAV_BAR";
 import Footer from "../components/Footer";
+import HomeCard from './../components/HomeCard';
 const HousesForSale = () => {
   const dispatch = useDispatch();
   const Houses = useSelector((state) => state.forSale);
-  const [itemsPerPage,setItemsPerPage] = useState(20);
-  const [currentPage,setCurrentPage] = useState(1);
   const HousesForSale = Houses.housesForSale;
   const [itemsPerPage, setItemsPerPage] = useState(20);
   const [FormSearchHouses,setFormSearchHouses] = useState([]);
@@ -19,10 +18,15 @@ const HousesForSale = () => {
     startIndex,
     startIndex + itemsPerPage
   );
-  const totalPages = Math.ceil(HousesForSale.length / itemsPerPage);
+  const totalPages = Math.ceil(HousesForSale.length / itemsPerPage) ;
+  const totlePagesINsearch = Math.ceil(FormSearchHouses.length / itemsPerPage) ;
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
+  }
+  const pageNumbersInseacrh = [];
+  for(let i = 1; i <= totlePagesINsearch; i++) {
+    pageNumbersInseacrh.push(i);
   }
   function handlePageChange(event) {
     setCurrentPage(Number(event.target.dataset.pageNumber));
@@ -48,7 +52,7 @@ const HousesForSale = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     console.log(selectedValues);
-    const filterHouses = Houses.housesForSale.filter((house) => {
+    const filterHouses = HousesForSale.filter((house) => {
       return (
         (house.prop_type
           .toLowerCase()
@@ -62,6 +66,7 @@ const HousesForSale = () => {
           .toString()
           .toLowerCase()
           .includes(selectedValues.bedrooms.toLowerCase()) ||
+          // eslint-disable-next-line no-mixed-operators
           selectedValues.bedrooms === " BedRooms") &&
         (selectedValues.bathrooms === "BathRooms" ||
           house.baths
@@ -83,7 +88,7 @@ const HousesForSale = () => {
     <div className=" w-full h-auto flex justify-center items-center  flex-col  bg-gray-100 dark:bg-gray-800  ">
       <NAV_BAR color='#38bdf8' />
       <div className="content w-full h-auto flex md:flex-row flex-col justify-start items-start lg:px-12 px-6 ">
-        <div className="leftSide md:w-[80%] w-full h-auto mt-4 justify-center items-center">
+        <div className="leftSide md:w-[80%] w-full h-auto mt-4 justify-start items-start ">
           <div className="h-[85px] w-full flex justify-start items-center  ">
             <h2 className="w-full h-full lg:px-12 px-4  text-blue-title  uppercase text-body flex  items-center py-6 border-b-2 border-gray-400  text-2xl">
               Properties Listing
@@ -92,44 +97,52 @@ const HousesForSale = () => {
            {Houses.isLoding && (
             <div className="w-full h-auto flex justify-center items-center py-24"><PropagateLoader color="#38bdf8" /></div>
           )}
-          <div className="w-full h-auto overflow-auto lg:m-5 m-0 p-0 flex justify-center items-center flex-col ">
-            {!Houses.isLoding && FormSearchHouses.length <=0 && currentProducts.length > 0 ? (
+          <div className="w-full h-auto overflow-auto  p-0 flex justify-center items-center flex-col  lg:border-r-2 dark:border-gray-600 :border-gray-100 ">
+            
+            {!Houses.isLoding && FormSearchHouses.length <= 0 && currentProducts.length > 0 ? (
               <>
-              <ul className="card-container bg-gray-100 dark:bg-gray-800 m-0 h-auto ">
+                <div className='w-full h-16 flex justify-start items-center text-blue-title capitalize lg:px-12 px-4'>houses Results:
+                  <span className="font-bold text-gray-700 ml-2" >{HousesForSale.length}</span></div>
+                <ul className="card-container bg-gray-100 dark:bg-gray-800 m-0 h-auto ">
                   {currentProducts.map(
-                  (house) =>
-                    house.photo && (
-                      <li
-                        className="Card-content font-body lg:w-[30%] w-full h-auto lg:text-xl text-sm"
-                        key={house.property_id}
-                      >
-                        <Card house={house} />
-                      </li>
-                    )
-                )}
-              </ul>
-                 <div className="w-full h-10 text-[14px] font-body flex  justify-center items-center">
-              {pageNumbers.map((pageNumber) => (
-                <button
-                  className={`6 md:w-4 w-3 md:h-4 h-2 p-3 lg:mr-2 mr-1  md:text-[12px] text-[10px] rounded-full flex justify-center items-center bg-gray-500 cursor-pointer hover:bg-gray-400  hover:text-blue-title active:text-blue-hover ${
-                    currentPage === pageNumber && "bg-blue-title text-blue-title"
-                  }`}
-                  key={pageNumber}
-                  data-page-number={pageNumber}
-                  onClick={handlePageChange}
-                  disabled={currentPage === pageNumber}
-                >
-                  {pageNumber}
-                </button>
-              ))}
+                    (house) =>
+                      house.photo && (
+                        <li
+                          className="Card-content font-body lg:w-[30%] w-full h-auto lg:text-xl text-sm"
+                          key={house.property_id}
+                        >
+                          <Card house={house} />
+                        </li>
+                      )
+                  )}
+                </ul>
+                <div className="w-full h-10 text-[14px] font-body flex  justify-center items-center">
+                  {pageNumbers.map((pageNumber) => (
+                    <button
+                      className={`6 md:w-4 w-3 md:h-4 h-2 p-3 lg:mr-2 mr-1  md:text-[12px] text-[10px] rounded-full flex justify-center items-center bg-gray-500 cursor-pointer hover:bg-gray-400  hover:text-blue-title active:text-blue-hover ${currentPage === pageNumber && "bg-blue-title text-blue-title"
+                        }`}
+                      key={pageNumber}
+                      data-page-number={pageNumber}
+                      onClick={handlePageChange}
+                      disabled={currentPage === pageNumber}
+                    >
+                      {pageNumber}
+                    </button>
+                  ))}
                 </div>
+             
               </>
-            ) : <>
-              <ul className="card-container bg-gray-100 dark:bg-gray-800 m-0 h-auto ">
+            ) :
+             
+              <>
+                <div className='w-full h-16 flex justify-start items-center text-blue-title capitalize lg:px-12 px-4'>Search Results:
+                  <span className="font-bold text-gray-700" >{FormSearchHouses.length}</span></div>
+              <ul className="card-container bg-gray-100 dark:bg-gray-800 m-0 h-full ">
                   {FormSearchHouses.slice(
                     startIndex,
                     startIndex + itemsPerPage
-                  ).map(
+                  )
+                  .map(
                   (house) =>
                     house.photo && (
                       <li
@@ -142,7 +155,7 @@ const HousesForSale = () => {
                 )}
               </ul>
               <div className="w-full h-10 text-[14px] font-body flex  justify-center items-center">
-                {pageNumbers.map((pageNumber) => (
+                  {pageNumbersInseacrh.map((pageNumber) => (
                   <button
                     className={`6 md:w-4 w-3 md:h-4 h-2 p-3 lg:mr-2 mr-1  md:text-[12px] text-[10px] rounded-full flex justify-center items-center bg-gray-500 cursor-pointer hover:bg-gray-400  hover:text-blue-title active:text-blue-hover ${currentPage === pageNumber && "bg-blue-title text-blue-title"
                       }`}
@@ -205,7 +218,7 @@ const HousesForSale = () => {
                 </div> 
                 <div className="form-group w-full h-[40px] mb-5 flex justify-center items-center text-[14px] font-body font-bold px-2">
                   <select   name='bathrooms' value={selectedValues.bathrooms} className="w-full h-auto py-3 shadow-md bg-gray-200 border-none outline-none px-3" onChange={handleDateForm}>
-                    <option className='w-full h-auto  shadow-md px-3 bg-gray-200 border-none outline-none text-gray-400 cursor-pointer hover:bg-gray-400' >All BathRooms</option>
+                    <option className='w-full h-auto  shadow-md px-3 bg-gray-200 border-none outline-none text-gray-400 cursor-pointer hover:bg-gray-400' >BathRooms</option>
                     <option className='w-full h-auto  shadow-md px-3 bg-gray-200 border-none outline-none text-gray-400 cursor-pointer hover:bg-gray-400' >1</option >
                     <option className='w-full h-auto  shadow-md px-3 bg-gray-200 border-none outline-none text-gray-400 cursor-pointer hover:bg-gray-400' >2</option>
                     <option className='w-full h-auto  shadow-md px-3 bg-gray-200 border-none outline-none text-gray-400 cursor-pointer hover:bg-gray-400' >3</option >
@@ -232,7 +245,30 @@ const HousesForSale = () => {
  </div>
 
               </form>
+          </div>
+          <div className="Featured-Properties w-full h-auto flex flex-col lg:px-4 px-0">
+            <div className="h-[20px] w-full flex justify-start items-center mb-4   ">
+              <h2 className="w-full h-full  text-blue-title  uppercase text-body flex  items-center py-7 border-b-2 border-gray-400 text-lg">
+                Featured Properties
+              </h2>
             </div>
+            <div className="houses w-full h-auto flex flex-col justify-start items-center">
+              <ul className=" w-full flex-col  flex  justify-start items-center  ">
+                {Houses.housesForSale.slice(133,137).map(
+                  (house) =>
+                    house.photo && (
+                      <li
+                        className="w-full h-auto my-2"
+                        key={house.property_id}
+                      >
+                        <HomeCard house={house} />
+                      </li>
+                    )
+                )}
+              </ul>   
+            </div>
+          </div>
+      
         </div>
       </div>
       <Footer />

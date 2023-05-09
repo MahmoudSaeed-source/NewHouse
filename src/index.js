@@ -22,19 +22,19 @@ const router = createBrowserRouter([
     errorElement:<ErrorPage/>
   },
   {
-    path: '/HousesForSale',
+    path: '/houses-for-sale',
     element: <HousesForSale />
   },
   {
-    path: '/HousesForRent',
+    path: '/houses-for-rent',
     element: <HousesForRent />
   },
   {
-    path: 'HousesForRent/:HouseId',
+    path: 'houses-for-rent/:HouseId',
     element: <HouseDatailes />
   },
   {
-    path: "HousesForSale/:HouseId",
+    path: "houses-for-sale/:HouseId",
     element: <HouseDatailes />,
   },
 ])

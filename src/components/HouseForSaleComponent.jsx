@@ -29,7 +29,11 @@ const HouseForSaleComponent = ( ) => {
           </div>
 
           <div className="for-sale w-full flex justify-center items-start  m-0 p-0 py-10 ">
-            {Houses.isLoding && <div className="w-full h-auto flex justify-center items-center py-24"><PropagateLoader color="#38bdf8" /></div>}
+            {Houses.isLoding && (
+              <div className="w-full h-auto flex justify-center items-center py-24">
+                <PropagateLoader color="#38bdf8" />
+              </div>
+            )}
             {!Houses.isLoding && Houses.housesForSale.length && (
               <ul className="card-container  relative md:flex-row flex-col lg:px-0 p-3  ">
                 {Houses.housesForSale.slice(133, 143).map(
