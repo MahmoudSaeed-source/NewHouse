@@ -26,16 +26,16 @@ const Card = ({ house }) => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui
         vestibulum
       </p>
-      <div className="w-full h-24 flex justify-start items-center  lg:text-[10px] text-[10px] mt-2  border-b-2 border-gray-100 px-4 pb-6">
+      <div className="w-full h-32 flex justify-start items-center  lg:text-[10px] text-[10px] mt-2  border-b-2 border-gray-100 px-4 pb-6">
         <div className="w-[50%] h-full text-[12px] text-black font-links flex items-start justify-start flex-col font-bold">
           <p>status : </p>
+          <p> city : </p>
           <p> beds : </p>
-          <p> baths : </p>
           <p> baths : </p>
         </div>
         <div className="w-[50%] h-full text-[12px] text-gray-500 font-title flex items-end justify-start flex-col ">
-          <p> {house.address_new.city}</p>
           <p> {house.prop_status.replace("for_rent", "Rent")}</p>
+          <p> {house.address_new.city}</p>
           <p> {house.beds}</p>
           <p> {house.baths}</p>
         </div>
