@@ -7,7 +7,6 @@ const Properties_Area = () => {
   const dispatch = useDispatch();
   const housesCity = HousesForSale.map((house) => house.address_new.city);
   const uniqueAreaHouses = Array.from(new Set(housesCity));
-  
   useEffect(() => {
     dispatch(fetchHousesForSale());
   }, []);
@@ -19,6 +18,7 @@ const Properties_Area = () => {
         </h2>
         <div className="Areas w-full h-full overflow-hidden">
           <ul className="w-full h-full text-white flex justify-start items-center gap-2 flex-wrap ">
+
             {uniqueAreaHouses.map(area => (
               <li className="w-auto h-auto p-4 bg-blue-hover text-white ">{area}</li>
             ))}
