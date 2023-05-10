@@ -32,7 +32,6 @@ const NAV_BAR = ({ color }) => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 100) {
-        console.log("Scrolled past 100 pixels");
         nav_ONScroll.current.classList.add("nav-On-scroll");
       } else {
         nav_ONScroll.current.classList.remove("nav-On-scroll");
