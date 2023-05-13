@@ -1,7 +1,7 @@
+import "mapbox-gl/dist/mapbox-gl.css";
 import './App.css';
 import NAV_BAR from './components/NAV_BAR';
 import HeroSection from './components/HeroSection';
-import OurServices from './components/OurServices'
 import HouseForSaleComponent from './components/HouseForSaleComponent';
 import HouseForRentComponent from './components/HouseForRentComponent';
 import FeaturedHouses from './components/FeaturedHouses'
@@ -15,7 +15,6 @@ function App() {
       <NAV_BAR />
       <HeroSection />
       <Properties_Area/>
-      <OurServices />
         <HouseForSaleComponent />
       <HouseForRentComponent />
       <FeaturedHouses/>

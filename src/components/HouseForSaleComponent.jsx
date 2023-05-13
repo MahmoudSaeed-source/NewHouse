@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 const HouseForSaleComponent = ( ) => {
-      
       const dispatch = useDispatch()
       const Houses = useSelector((state) => state.forSale)
       useEffect(() => {

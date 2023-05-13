@@ -11,12 +11,10 @@ const options = {
         sort: 'relevance'
     },
     headers: {
-        'X-RapidAPI-Key': '32f0a19324msh37e6eae0698204cp18e31ejsnc222b39648da',
+        'X-RapidAPI-Key': '869eded064msh22111fa52e0e35dp17d7d5jsn021dcfb4eb5f',
         'X-RapidAPI-Host': 'realty-in-us.p.rapidapi.com'
     }
 };
-
-
 
 const initialState = {
     isLoding: false,
@@ -26,11 +24,9 @@ const initialState = {
 export const fetchHousesForSale = createAsyncThunk('forSale/fetchHousesForSale',async () => {
     try {
         const response = await axios.request(options);
-        console.log(response.data.listings) ;
            return response.data.listings;
     } catch(error) {
         console.error(error);
-        
     }
 })
 const HousesForSale = createSlice({

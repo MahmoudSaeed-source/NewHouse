@@ -6,7 +6,7 @@ import ErrorPage from './pages/ErrorPage'
 import HousesForSale from './pages/HousesForSale'
 import HousesForRent from './pages/HousesForRent'
 import HouseDatailes from './pages/HouseDatailes'
-
+import PropertiesArea from './pages/PropertiesArea';
 import './index.css';
 import App from './App';
 import {
@@ -14,6 +14,7 @@ import {
   RouterProvider,
   
 } from 'react-router-dom'
+
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: '/houses-for-sale',
     element: <HousesForSale />
+  },
+  {
+    path: "/properties-area/:area",
+    element: <PropertiesArea />
   },
   {
     path: '/houses-for-rent',

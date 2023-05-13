@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { fetchHousesForSale } from "../app/features/forSale/forSale";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const Properties_Area = () => {
    const Houses = useSelector((state) => state.forSale);
   const HousesForSale = Houses.housesForSale;
@@ -37,23 +38,29 @@ const Properties_Area = () => {
                 (areaimage) => areaimage.photo
               );
               return (
-                <li className="w-[350px] h-32 p-4  text-gray-400  flex justify-center items-center cursor-pointer ">
-                  <>
-                    <div className="w-[60%] h-full flex text-blue-title font-links justify-start items-center">
-                      <img
-                        className="w-full h-full"
-                        src={areaPhoto[0]}
-                        alt={area}
-                        onLoad={() => console.log("Image loaded successfully")}
-                        onError={() => (this.style.display = "none")}
-                      />
-                    </div>
-                    <div className="w-[40%] h-full flex flex-col text-blue-title font-links justify-center items-center ml-2">
-                      <h6 className="text-[13] font-bold">{area}</h6>
-                      <h6>({count}) listings</h6>
-                    </div>
-                  </>
-                </li>
+                <Link to = {`/properties-area/${area}`} >
+                  <li className="w-[350px] h-32 p-4  text-gray-400  flex justify-center items-center cursor-pointer ">
+                    <>
+                      <div className="w-[60%] h-full flex text-blue-title font-links justify-start items-center">
+                        <img
+                          className="w-full h-full"
+                          src={areaPhoto[0]}
+                          alt={area}
+                          onLoad={() =>
+                            console.log("Image loaded successfully")
+                          }
+                          onError={() => (this.style.display = "none")}
+                        />
+                      </div>
+                      <div className="w-[40%] h-full flex flex-col text-blue-title font-links justify-center items-center ml-1">
+                        <h6 className="text-[14px] font-bold capitalize">{area}</h6>
+                        <h6 className="text-[13px] font-bold capitalize">
+                          listings ({count})
+                        </h6>
+                      </div>
+                    </>
+                  </li>
+                </Link>
               );
             })}
           </ul>
