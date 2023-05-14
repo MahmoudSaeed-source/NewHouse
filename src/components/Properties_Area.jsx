@@ -8,7 +8,6 @@ const Properties_Area = () => {
   const dispatch = useDispatch();
   const housesCity = HousesForSale.map((house) => house.address_new.city);
   const uniqueAreaHouses = Array.from(new Set(housesCity));
-
     useEffect(() => {
       dispatch(fetchHousesForSale());
     }, []);
@@ -46,10 +45,6 @@ const Properties_Area = () => {
                           className="w-full h-full"
                           src={areaPhoto[0]}
                           alt={area}
-                          onLoad={() =>
-                            console.log("Image loaded successfully")
-                          }
-                          onError={() => (this.style.display = "none")}
                         />
                       </div>
                       <div className="w-[40%] h-full flex flex-col text-blue-title font-links justify-center items-center ml-1">

@@ -28,7 +28,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/properties-area/:area",
-    element: <PropertiesArea />
+    element: <PropertiesArea />,
+  
   },
   {
     path: '/houses-for-rent',
