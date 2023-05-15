@@ -6,6 +6,7 @@ import { fetchHousesForRent } from "../app/features/forRent/ForRentSlice";
 import { useDispatch, useSelector } from "react-redux";
 import NAV_BAR from "../components/NAV_BAR";
 import Footer from "../components/Footer";
+import MoveUp from "../components/MoveUp";
 const HousesForRent = () => {
   const dispatch = useDispatch();
   const Houses = useSelector((state) => state.forRent);
@@ -376,6 +377,7 @@ const HousesForRent = () => {
           </div>
         </div>
       </div>
+      <MoveUp />
       <Footer />
     </div>
   );

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import NAV_BAR from "../components/NAV_BAR";
 import Footer from "../components/Footer";
 import HomeCard from './../components/HomeCard';
+import MoveUp from "../components/MoveUp";
 const HousesForSale = () => {
   const dispatch = useDispatch();
   const Houses = useSelector((state) => state.forSale);
@@ -184,7 +185,7 @@ const HousesForSale = () => {
               Search Properties
             </h2>
             </div>
-            <div className="search w-full h-auto mt-7 lg:px-4 px-0 pb-10">
+            <div className="search w-full h-auto mt-7 lg:px-2 px-0 pb-10">
               <form className="h-auto">
                 <div className="form-group w-full h-[40px] mb-5 flex justify-center items-center text-[14px] font-body font-bold px-2 cursor-pointer">
                   <select  name='state' value={selectedValues.state} className="w-full h-full  shadow-md bg-gray-200 border-none outline-none cursor-pointer px-3" onChange={handleDateForm}>
@@ -253,12 +254,12 @@ const HousesForSale = () => {
               </h2>
             </div>
             <div className="houses w-full h-auto flex flex-col justify-start items-center">
-              <ul className=" w-full flex-col  flex  justify-start items-center  ">
+              <ul className=" w-full flex-col  flex  justify-start items-start  overflow-hidden  ">
                 {Houses.housesForSale.slice(133,137).map(
                   (house) =>
                     house.photo && (
                       <li
-                        className="w-full h-auto my-2"
+                        className="max-w-full h-auto my-2"
                         key={house.property_id}
                       >
                         <HomeCard house={house} />
@@ -271,6 +272,7 @@ const HousesForSale = () => {
       
         </div>
       </div>
+      <MoveUp />
       <Footer />
     </div>
   );

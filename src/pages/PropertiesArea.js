@@ -7,8 +7,10 @@ import NAV_BAR from '../components/NAV_BAR'
 import { BiChevronRight } from 'react-icons/bi'
 import Map,{ Marker,NavigationControl } from 'react-map-gl';
 import Card from '../components/Card'
-import { useState } from 'react'
+
 import Footer from '../components/Footer'
+import MoveUp from '../components/MoveUp'
+import MapComponent from '../components/MapComponent'
 const PropertiesArea = () => {
   const  {area}  = useParams()
  
@@ -28,23 +30,7 @@ const PropertiesArea = () => {
       <div className=" w-full h-auto flex justify-center items-center  flex-col  bg-gray-100 dark:bg-gray-800  ">
       <NAV_BAR color="#38bdf8" />
       <div className='map w-full h-[400px] lg:px-0 px-4 mt-4 '>
-        <Map
-          mapboxAccessToken='pk.eyJ1IjoiYWhtZWR0YWtlc2h5IiwiYSI6ImNsaG01YmRyZTE4ajUzcHAxcjNnZmltbnQifQ.E2JIABJLN4HJmHGi8A6Qqg'
-          initialViewState={{
-            longitude:  lonArea ,
-            latitude:  latArea ,
-            zoom: 10
-          }}
-          style={{ height: 400 }}
-         className='w-full  shadow-md'
-          mapStyle="mapbox://styles/mapbox/streets-v9"
-        >
-          <Marker 
-            longitude={lonArea}
-            latitude=  {latArea}
-          />
-          <NavigationControl position = 'top-right'/>
-        </Map>
+        <MapComponent lon={lonArea} lat={latArea} />
       </div>
       <div className="content w-full h-auto flex md:flex-row flex-col  justify-start items-start lg:px-12 px-4">
         <div className="leftSide md:w-[80%] w-full h-auto mt-4 justify-start items-start ">
@@ -102,6 +88,7 @@ const PropertiesArea = () => {
             </div>
           </div>
       </div>
+      <MoveUp/>
       <Footer/>
         </div>
    

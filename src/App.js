@@ -8,6 +8,7 @@ import FeaturedHouses from './components/FeaturedHouses'
 import Footer from './components/Footer'
 import AgentList from './components/AgentList'
 import Properties_Area from './components/Properties_Area';
+import MoveUp from "./components/MoveUp";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       <HouseForRentComponent />
       <FeaturedHouses/>
       <AgentList />
-      <Footer/>
+      <Footer />
+    <MoveUp/>
       </div>
   );
 }
