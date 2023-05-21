@@ -26,7 +26,7 @@ const HouseDatailes = () => {
   return (
         <div className="w-screen h-full bg-gray-100 dark:bg-gray-800  flex flex-col overflow-hidden">
               <NAV_BAR color='#38bdf8' />
-              <div className='houseLocation w-full h-96 lg:px-0 px-4'>
+              <div className='houseLocation w-full h-[400px] lg:px-2 px-4 mt-2'>
                <MapComponent lat={lat} lon={lon}/>
               </div>    
       <div className="w-full h-full  flex justify-start  flex-col overflow-hidden lg:px-12 px-4  ">
