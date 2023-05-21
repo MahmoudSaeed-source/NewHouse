@@ -24,17 +24,25 @@ const AgentList = () => {
       </div>
 
       <div className="w-full h-auto flex lg:justify-start justify-center lg-mx-12 lg:items-center  items-center m-0 p-0 flex-col">
-        {agentListSelector.loading && <PropagateLoader color="#38bdf8" />}
+        {agentListSelector.loading && (
+          <div className="w-full h-auto flex justify-center items-center py-24">
+            <PropagateLoader color="#38bdf8" />
+          </div>
+        )}
         {!agentListSelector.loading && agentListSelector.agentList.length && (
           <ul className=" w-full h-full   flex lg:justify-start justify-center lg:items-center items-center lg:flex-row flex-col ">
-            {agentListSelector.agentList.slice(0, 3).map((agent) => (
-              <li
-                className=" font-body lg:w-1/3 w-full lg:text-xl flex  mb-4 mx-o justify-center  items-center"
-                key={agent.advertiser_id}
-              >
-                <AgentCard agent={agent} />
-              </li>
-            ))}
+            {
+              agentListSelector.agentList.slice(0,3).map(
+              (agent) =>
+               (
+                  <li
+                    className=" font-body lg:w-1/3 w-full lg:text-xl flex  mb-4 mx-o justify-center  items-center"
+                    key={agent.advertiser_id}
+                  >
+                    <AgentCard agent={agent} />
+                  </li>
+                )
+            )}
           </ul>
         )}
       </div>
