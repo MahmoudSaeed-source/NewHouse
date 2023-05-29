@@ -7,6 +7,7 @@ import HousesForSale from './pages/HousesForSale'
 import HousesForRent from './pages/HousesForRent'
 import HouseDatailes from './pages/HouseDatailes'
 import PropertiesArea from './pages/PropertiesArea';
+import Sign_Up from './pages/Sign_Up'
 import './index.css';
 import App from './App';
 import {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
     path: "houses-for-sale/:HouseId",
     element: <HouseDatailes />,
   },
+  {
+    path: '/sign-up',
+    element: <Sign_Up />
+  }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
