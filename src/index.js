@@ -7,7 +7,7 @@ import HousesForSale from './pages/HousesForSale'
 import HousesForRent from './pages/HousesForRent'
 import HouseDatailes from './pages/HouseDatailes'
 import PropertiesArea from './pages/PropertiesArea';
-import Sign_Up from './pages/Sign_Up'
+import Registration from './pages/Registration'
 import './index.css';
 import App from './App';
 import {
@@ -45,8 +45,8 @@ const router = createBrowserRouter([
     element: <HouseDatailes />,
   },
   {
-    path: '/sign-up',
-    element: <Sign_Up />
+    path: '/register',
+    element: <Registration />
   }
 ])
 
