@@ -13,10 +13,16 @@ const Registration = () => {
   const nameRegex = /^[a-zA-Z_]+$/
  
 const checkData = (e)=>{
-  if(e.target.value == ""){
+  if(e.target.value === ""){
     ErrorMassageRef.current.textContent   = 'userName is reqiure'
-  } 
+  } else if(nameRegex.test(userName)) {
+  } else {
+    ErrorMassageRef.current.textContent = 'userName is not valid'
+  }
 }
+  const handleFocus = () => {
+    ErrorMassageRef.current.textContent = ''
+  }
 
   const handle_Data_Form =  async (e)   => {
     e.preventDefault()
@@ -44,7 +50,7 @@ const checkData = (e)=>{
                <p ref={ErrorMassageRef} className =' w-full text-[10px] text-red-600 font-body text-start'></p>
             </div>
             <div className='w-full h-auto  '>
-              <input className='w-full h-10 mt-2 rounded-md p-2 border-2 border-gray-100 outline-none	' autoComplete='none'  ref={EmailREf} type='email' placeholder='Email' name='Email' />
+              <input className='w-full h-10 mt-2 rounded-md p-2 border-2 border-gray-100 outline-none	' autoComplete='none' ref={EmailREf} type='email' placeholder='Email' name='Email' onFocus={handleFocus} />
             </div>
             <div className='w-full h-auto mt-2 '>
               <input className='w-full h-10 mt-2 rounded-md p-2 border-2 border-gray-100 outline-none	' autoComplete='none' ref={passWordRef} type='password' placeholder='Password' name='password ' />
