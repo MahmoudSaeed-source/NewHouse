@@ -1,4 +1,18 @@
 {
   "users": [
-     ]
+    {
+      "username": "mahmoudsaeed",
+      "Email": "m@gmail.com",
+      "password ": "1",
+      "ConfirmPassword ": "1",
+      "id": 1
+    },
+    {
+      "username": "AhmedMahmed2",
+      "Email": "mm@gmail.com",
+      "password ": "Ahmed1234",
+      "ConfirmPassword ": "Ahmed1234",
+      "id": 2
+    }
+  ]
 }
