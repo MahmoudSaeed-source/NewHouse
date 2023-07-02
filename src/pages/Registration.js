@@ -1,11 +1,6 @@
-<<<<<<< Updated upstream
 import React,{useRef,useState,useEffect} from 'react'
 import axios from 'axios'
-=======
-import React from 'react'
 import { Link } from 'react-router-dom';
-
->>>>>>> Stashed changes
 const Registration = () => {
   const ErrorMassage_UserName_Ref = useRef(null)
   const ErrorMassage_Email_Ref = useRef(null)
@@ -95,7 +90,7 @@ const Registration = () => {
           </h2>
           <form className='  full h-auto flex-col flex font-links relative' onSubmit={handle_Data_Form}>
             <div className='w-full h-auto  '>
-<<<<<<< Updated upstream
+
               <input className='w-full h-10 mt-2 rounded-md p-2 border-2 border-gray-100 outline-none	'
                 type='text'
                 placeholder='userName'
@@ -144,10 +139,8 @@ const Registration = () => {
                 name='ConfirmPassword '
                 onChange={(e) => setConfirmPassWord(e.target.value)}
                 onBlur={check_Confirm_PassWord_Validation}
-                onFocus={handleFocus_ConfirmPassWord}
-              />
+                onFocus={handleFocus_ConfirmPassWord} />
               <p ref={ErrorMassage_Confirm_Password_Ref} className=' w-full text-[10px] text-red-600 font-body text-start'></p>
-=======
               <input className='w-full h-10 mt-2 rounded-md p-2 border-2 border-gray-100 outline-none	' requier  type='text' placeholder='userName' name='username' />
             </div>
             <div className='w-full h-auto  '>
@@ -158,16 +151,10 @@ const Registration = () => {
             </div>
             <div className='w-full h-auto mt-2 '>
               <input className='w-full h-10 mt-2 rounded-md p-2 border-2 border-gray-100 outline-none	' requier type='password' placeholder='ConfirmPassword' name='ConfirmPassword ' />
->>>>>>> Stashed changes
             </div>
             <div className='w-full h-[50px] flex justify-center items-center mt-4'>
               <button type='submit' className='w-[90%] h-[35px] rounded-md bg-blue-title font-body text-white text-center '>SingUp</button>
             </div>
-         
-<<<<<<< Updated upstream
-=======
-            
->>>>>>> Stashed changes
           </form>
         </div>
     
