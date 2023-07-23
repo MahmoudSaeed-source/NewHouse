@@ -15,6 +15,7 @@ import {
   RouterProvider,
   
 } from 'react-router-dom'
+import Login from './pages/Login';
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: <Registration />
+  },
+  {
+    path: '/login',
+    element: <Login />
   }
 ])
 

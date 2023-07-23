@@ -1,18 +1,24 @@
 {
   "users": [
     {
-      "username": "mahmoudsaeed",
-      "Email": "m@gmail.com",
-      "password ": "1",
-      "ConfirmPassword ": "1",
+      "username": "MahmoudSaeed@23",
+      "Email": "ms2481988@gmail.com",
+      "password": "MahmoudSaeed@12345678",
+      "ConfirmPassword": "MahmoudSaeed@12345678",
       "id": 1
     },
     {
-      "username": "AhmedMahmed2",
+      "username": "Monaahme@2",
       "Email": "mm@gmail.com",
-      "password ": "Ahmed1234",
-      "ConfirmPassword ": "Ahmed1234",
+      "password": "Mona@123456",
+      "ConfirmPassword": "Mona@123456",
       "id": 2
+    {
+      "username": "RoadyMahmoud@2",
+      "Email": "ro@gmail.com",
+      "password": "Rody123456@",
+      "ConfirmPassword": "Rody123456@",
+      "id": 3
     }
   ]
 }
