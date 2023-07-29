@@ -3,6 +3,7 @@ import darkLogo from '../assets/images/darklogo.png';
 import lightLogo from '../assets/images/lightlogo.png';
 import { MdDarkMode } from 'react-icons/md';
 import { CiLight } from 'react-icons/ci'
+import { FaUser } from "react-icons/fa";
 import { AiOutlineMenuFold } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
@@ -10,6 +11,7 @@ import { toggleMode } from '../app/features/darkMode/darkModeSlice'
 import  './Nav_bar.css'
 const NAV_BAR = ({ color }) => {
   const CurrentMode = useSelector((state) => state.mode.currentMode);
+   const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const navRef = useRef();
   const nav_ONScroll = useRef();
@@ -90,6 +92,18 @@ const NAV_BAR = ({ color }) => {
         <li className="link">
           <Link to="/">Contact us</Link>
         </li>
+        {users.user ? (
+          <li className="flex items-center justify-center">
+            <FaUser />
+            {users.user}
+          </li>
+        ) : (
+          <ul>
+            <li>
+              <Link to="/login">login</Link>
+            </li>
+          </ul>
+        )}
       </ul>
       <div className="setting h-full  flex items-center justify-center w-12 ">
         {CurrentMode ? (

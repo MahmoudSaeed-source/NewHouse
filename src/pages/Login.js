@@ -6,14 +6,15 @@ import { userLoginRequest,userLoginSuccess,userLoginFailure } from '../app/featu
 import { useDispatch,useSelector } from "react-redux";
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [userName,setUserName]=useState('')
   const [Password,setPassword] = useState('')
   const users = useSelector((state) => state.users)
   const dispatch = useDispatch()
- 
+  const moveToHomePage = useNavigate()
   const successLogin = () => {
-    toast.success('success to login ',{
+    toast.success(`Welcome ${users.user}`,{
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
@@ -25,7 +26,7 @@ const Login = () => {
     });
   };
   const errorLogIN = () => {
-    toast.error('uesrname or password is error',{
+    toast.error('username or password is error',{
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
@@ -49,24 +50,21 @@ const Login = () => {
         dispatch(userLoginRequest())
         await new Promise(resolve => setTimeout(resolve,1000));
         dispatch(userLoginSuccess(getUserInData[0].username));
-        console.log('is login')
-        successLogin()
-        
+        successLogin();
+        moveToHomePage('/')
       }else{
-        console.log('password dont match')
         dispatch(userLoginFailure('password dont match'));
         errorLogIN()
       }
     } else {
-      console.log('المستخدم غير موجود ')
-      dispatch(userLoginFailure('المستخدم غير موجود'));
+      dispatch(userLoginFailure('username is error'));
       errorLogIN()
     }
   }
 
   return (
     <main className='w-full h-screen flex items-center justify-center bg-hero-pattern'>
-      <div className="success w-full h-12 text-white absolute top-0 left-0 "  >
+      <div className="success w-full h-12 text-white absolute top-0 left-0  "  >
         <ToastContainer
           position="top-center"
           autoClose={2000}
@@ -80,7 +78,7 @@ const Login = () => {
           theme="light"
         />
       </div>
-      <div className=' w-full h-full flex items-center justify-center flex-row' style={{ backgroundColor: '#333333ba' }} >
+      <div className=' w-full h-full flex items-center justify-center flex-row px-4 ' style={{ backgroundColor: '#333333ba' }} >
         <div className='w-96 h-auto flex  flex-col   bg-white p-6 rounded-md'>
           <h2 className='w-full h-10 flex justify-center items-center text-black font-body text-[30px] font-bold mb-2'>
           LogIN

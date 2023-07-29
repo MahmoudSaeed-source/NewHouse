@@ -15,7 +15,7 @@ const Registration = () => {
   const [passwordValid,setPasswordValid]=useState (false)
   const [Confirm_passwordValid,setConfirm_passwordValid]=useState (false)
   const [emailvalid,setEmailValid] = useState(false)
-  const nameRegex = /(?=[A-Za-z0-9@#$%^&+!=]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,}).*$/
+  const nameRegex = /(?=[A-Za-z0-9]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,}).*$/
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
  const NavToLOgIN = useNavigate()

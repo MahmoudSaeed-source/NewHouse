@@ -21,10 +21,10 @@
     overflow: hidden;
 }
 .menu-open{
-width: 60% !important;
-height: 300px !important;
-background-color: rgb(243 244 246) !important;
-color:#45a9d7!important;
+width: 100% !important;
+height: auto !important;
+background-color: rgb(45 94 118) !important;
+color:#c3e0ed !important;
 position: absolute !important;
 top: 80px !important;
 right: 0 !important;
@@ -40,8 +40,8 @@ padding: 0;
 margin: 0;
 }
 .menu-open-dark{
-width: 60% ;
-height: 300px !important;
+width: 100% ;
+height: auto !important;
 background-color: rgb(31 41 55) !important;
 color:#45a9d7 !important;
 position: absolute !important;
