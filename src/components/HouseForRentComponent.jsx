@@ -9,6 +9,7 @@ import HomeCard from "./HomeCard";
 const HouseForRentComponent = () => {
   const dispatch = useDispatch();
   const Houses = useSelector((state) => state.forRent);
+  console.log(Houses)
   useEffect(() => {
     dispatch(fetchHousesForRent());
   }, []);
@@ -29,7 +30,7 @@ const HouseForRentComponent = () => {
       <hr></hr>
       <div className="w-full flex justify-center items-center  m-0 p-0 flex-col py-10">
         {Houses.loading && <div className="w-full h-auto flex justify-center items-center py-24"><PropagateLoader color="#38bdf8" /></div>}
-        {!Houses.loading && Houses.houseForRent.length && (
+        {!Houses.loading && Houses.houseForRent.length  && (
           <ul className="card-container relative md:flex-row flex-col lg:px-0 p-3  ">
             {Houses.houseForRent.slice(0, 12).map(
               (house) =>

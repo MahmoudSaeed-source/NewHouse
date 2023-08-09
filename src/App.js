@@ -49,8 +49,8 @@ function App() {
       <NAV_BAR />
       <HeroSection />
       <Properties_Area/>
-        <HouseForSaleComponent />
-      <HouseForRentComponent />
+         <HouseForSaleComponent />
+      <HouseForRentComponent /> 
       <FeaturedHouses/>
       <AgentList />
       <Footer />
